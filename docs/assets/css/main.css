@@ -90,6 +90,8 @@ a{color:inherit}
 .p .nm{font-family:var(--display);font-weight:550;font-size:var(--step--1);
   letter-spacing:-.01em;line-height:1.25;display:block}
 .p .rl{font-size:.78rem;color:var(--ink-soft);line-height:1.35;display:block;margin-top:.12rem}
+.p .nm a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.p .nm a:hover,.p .nm a:focus-visible{border-bottom-color:var(--cyan)}
 .pi{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.6rem;
   margin-bottom:2.6rem;padding-bottom:2.4rem;border-bottom:1px solid var(--rule);align-items:start}
 .pi .av{width:92px;height:92px;flex-basis:92px;font-size:1.15rem}
