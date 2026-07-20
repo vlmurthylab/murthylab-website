@@ -247,7 +247,7 @@ def build(pubs):
                 meta=format_meta(p)))
 
     body = '''<section class="sec" style="border-top:0"><div class="wrap">
-<h2 class="sec-h">Publications</h2>
+<h1 class="sec-h">Publications</h1>
 {profiles}
 <div class="filters">{buttons}</div>
 <p class="count" id="count">{n} publications</p>
@@ -274,6 +274,9 @@ def build(pubs):
 <meta name="twitter:description" content="Cardiac PET, coronary microvascular dysfunction, multiomic biomarkers, and machine learning.">
 <meta name="twitter:image" content="https://murthylab.org/assets/img/og-card.png">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/main.css">
 </head><body>{nav}{body}{footer}{script}</body></html>'''.format(
         nav=NAV, body=body, footer=FOOTER, script=SCRIPT)
