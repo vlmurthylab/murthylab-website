@@ -55,9 +55,33 @@ ACCENTS = {
 }
 
 
+# LaTeX escapes that stand for real characters.
+# Zotero re-escapes these on every BibTeX export, so they must be translated
+# here rather than fixed in the library.
+LATEX_LITERALS = {
+    r'\\textbar\s*':      '|',
+    r'\\textemdash\s*':   '\u2014',
+    r'\\textendash\s*':   '\u2013',
+    r'\\textquotesingle\s*': "'",
+    r'\\textasciitilde\s*':  '~',
+    # \textbackslash is deliberately absent: it would yield a literal
+    # backslash that the stray-command pass below would then re-consume.
+    r'\\&':               '&',
+    r'\\%':               '%',
+    r'\\_':               '_',
+    r'\\\$':              '$',
+}
+
+
 def _clean(value):
     for pattern, char in ACCENTS.items():
         value = re.sub(pattern, char, value)
+    # Translate known literals before stripping unrecognised commands below,
+    # which would otherwise swallow them along with the following space.
+    # The replacement is passed as a function so that characters such as
+    # a backslash are inserted literally rather than parsed as a template.
+    for pattern, char in LATEX_LITERALS.items():
+        value = re.sub(pattern, lambda _m, c=char: c, value)
     value = re.sub(r'\\[a-zA-Z]+\s*', '', value)   # stray commands
     return ' '.join(re.sub(r'[{}]', '', value).split())
 
