@@ -1,12 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="200" height="130" role="img" aria-labelledby="t3 d3">
 <title id="t3">Waveform to physiologic estimate</title>
-<desc id="d3">Repeated ECG complexes fading into the distance, passed through a model to yield an estimate of coronary flow reserve.</desc>
-<path d="M12 62 L26 62 L32 62 L38 40 L44 88 L50 50 L56 62 L74 62"
-      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M74 62 L88 62 L94 62 L100 40 L106 88 L112 50 L118 62 L132 62"
-      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" opacity=".42"/>
-<path d="M132 62 L140 62 L144 62 L148 46 L152 80 L156 54 L160 62 L168 62"
-      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" opacity=".16"/>
+<desc id="d3">Successive ECG complexes receding into the distance, passed through a model to yield an estimate of coronary flow reserve.</desc>
+<path d="M12.0 62.0 L15.4 62.0 Q19.0 58.6 22.5 62.0 L27.8 62.0 L28.9 63.3 L30.7 36.0 L32.8 69.0 L34.6 62.0 L41.5 62.0 C47.0 55.2 51.4 55.2 57.6 62.0 L74.0 62.0"
+      fill="none" stroke="currentColor" stroke-width="2.1"
+      stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M74.0 62.0 L77.4 62.0 Q81.0 58.6 84.5 62.0 L89.8 62.0 L90.9 63.3 L92.7 36.0 L94.8 69.0 L96.6 62.0 L103.5 62.0 C109.0 55.2 113.4 55.2 119.6 62.0 L136.0 62.0"
+      fill="none" stroke="currentColor" stroke-width="2.1"
+      stroke-linejoin="round" stroke-linecap="round" opacity=".40"/>
+<path d="M136.0 62.0 L138.2 62.0 Q140.5 59.6 142.8 62.0 L146.2 62.0 L146.9 62.9 L148.1 43.3 L149.4 67.1 L150.6 62.0 L155.0 62.0 C158.6 57.1 161.4 57.1 165.4 62.0 L176.0 62.0"
+      fill="none" stroke="currentColor" stroke-width="2.1"
+      stroke-linejoin="round" stroke-linecap="round" opacity=".15"/>
 <line x1="150" y1="96" x2="172" y2="96" stroke="var(--ai-node,#6B5B7B)" stroke-width="1.5" stroke-dasharray="3.5 3.5"/>
 <circle cx="182" cy="80" r="4" fill="var(--ai-node,#6B5B7B)" opacity=".3"/>
 <circle cx="182" cy="96" r="5.5" fill="var(--ai-node,#6B5B7B)"/>
