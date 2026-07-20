@@ -223,3 +223,56 @@ footer a{color:#B9C0C7}
 @media (max-width:560px){
   .nav .wrap{gap:.9rem;row-gap:.5rem}
 }
+
+/* ============ theme figure animation ============ */
+/* Each figure plays once when it scrolls into view. The JS adds .in to the
+   <img>'s parent; nothing depends on the animation having run, so if the
+   script never fires the figures simply show their finished state. */
+
+/* Resting state = the finished drawing. Only elements inside .res-fig.armed
+   are hidden, and .armed is set by script, so a no-JS visitor sees everything. */
+.res-fig.armed .tac-input,
+.res-fig.armed .tac-myo,
+.res-fig.armed .ecg{stroke-dasharray:100;stroke-dashoffset:100}
+.res-fig.armed .tac-peak,
+.res-fig.armed .ai-node,
+.res-fig.armed .ai-link{opacity:0}
+.res-fig.armed .cca-a,
+.res-fig.armed .cca-b,
+.res-fig.armed .cca-axis{opacity:0}
+.res-fig.armed .cca-bar{transform:scaleY(0);transform-origin:0 100%;
+                        transform-box:fill-box}
+
+/* --- theme 1: arterial input draws first, myocardium follows --- */
+.res-fig.in .tac-input{animation:draw 1.05s cubic-bezier(.4,0,.3,1) forwards}
+.res-fig.in .tac-myo{animation:draw 1.35s cubic-bezier(.4,0,.3,1) .28s forwards}
+.res-fig.in .tac-peak{animation:fade .3s ease-out .42s forwards}
+
+/* --- theme 2: diet block, then metabolites, then the shared axis --- */
+.res-fig.in .cca-a{animation:fade .42s ease-out forwards}
+.res-fig.in .cca-b{animation:fade .42s ease-out .38s forwards}
+.res-fig.in .cca-axis{animation:fade .4s ease-out .82s forwards}
+.res-fig.in .cca-bar{animation:grow .5s cubic-bezier(.3,0,.2,1) 1.02s forwards}
+
+/* --- theme 3: complexes trace in sequence, then the model resolves --- */
+.res-fig.in .ecg-1{animation:draw .62s linear forwards}
+.res-fig.in .ecg-2{animation:draw .62s linear .5s forwards}
+.res-fig.in .ecg-3{animation:draw .62s linear 1s forwards}
+.res-fig.in .ai-link{animation:fade .35s ease-out 1.5s forwards}
+.res-fig.in .ai-node-b{animation:fade .35s ease-out 1.72s forwards}
+.res-fig.in .ai-node-a,
+.res-fig.in .ai-node-c{animation:fade .35s ease-out 1.88s forwards}
+
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes grow{to{transform:scaleY(1)}}
+
+/* Anyone who has asked for less motion gets the finished figure immediately. */
+@media (prefers-reduced-motion:reduce){
+  .res-fig.armed .tac-input,.res-fig.armed .tac-myo,.res-fig.armed .ecg{
+    stroke-dasharray:none;stroke-dashoffset:0}
+  .res-fig.armed .tac-peak,.res-fig.armed .ai-node,.res-fig.armed .ai-link,
+  .res-fig.armed .cca-a,.res-fig.armed .cca-b,.res-fig.armed .cca-axis{opacity:1}
+  .res-fig.armed .cca-bar{transform:none}
+  .res-fig.in *{animation:none !important}
+}
