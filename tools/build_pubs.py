@@ -259,6 +259,20 @@ def build(pubs):
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Publications &middot; Murthy Lab</title>
 <meta name="description" content="Publications from the Murthy Lab at the University of Michigan, spanning cardiac PET, coronary microvascular dysfunction, multiomic cardiometabolic biomarkers, and machine learning.">
+<link rel="canonical" href="https://murthylab.org/publications.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Murthy Lab">
+<meta property="og:title" content="Publications &middot; Murthy Lab">
+<meta property="og:description" content="Publications from the Murthy Lab at the University of Michigan, spanning cardiac PET, coronary microvascular dysfunction, multiomic cardiometabolic biomarkers, and machine learning.">
+<meta property="og:url" content="https://murthylab.org/publications.html">
+<meta property="og:image" content="https://murthylab.org/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Murthy Lab, University of Michigan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Publications &middot; Murthy Lab">
+<meta name="twitter:description" content="Publications from the Murthy Lab at the University of Michigan, spanning cardiac PET, coronary microvascular dysfunction, multiomic cardiometabolic biomarkers, and machine learning.">
+<meta name="twitter:image" content="https://murthylab.org/assets/img/og-card.png">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 </head><body>{nav}{body}{footer}{script}</body></html>'''.format(

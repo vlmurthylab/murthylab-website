@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://murthylab.org/sitemap.xml
