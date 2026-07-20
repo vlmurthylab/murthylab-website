@@ -184,3 +184,22 @@ footer a{color:#B9C0C7}
   .res-head{position:static}
   .res-fig{margin:1rem 0 .5rem;max-width:170px}
 }
+
+/* ============ join us ============ */
+.join-lede{max-width:var(--measure);margin:0 0 1.2rem}
+.join-intro{max-width:var(--measure);margin:0 0 .4rem;color:#2B313A}
+.jlist{display:grid;gap:1.6rem}
+.j h3{font-family:var(--display);font-weight:600;font-size:var(--step-1);
+  letter-spacing:-.018em;line-height:1.25;margin:0 0 .4rem}
+.j p{max-width:var(--measure);margin:0;color:#2B313A}
+.join-apply{max-width:var(--measure);margin:0;color:#2B313A}
+
+
+/* ============ section rhythm ============ */
+/* .sec has symmetric padding, but the last child of a section is normally a
+   paragraph with margin:0, so the space below the final line reads as smaller
+   than the space above the heading. Add a consistent tail to every section
+   rather than a bottom margin on each individual class. */
+.sec > .wrap > :last-child{margin-bottom:0}
+.sec > .wrap::after{content:"";display:block;height:1.6rem}
+@media (max-width:720px){.sec > .wrap::after{height:1.1rem}}

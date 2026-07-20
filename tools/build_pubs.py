@@ -163,6 +163,7 @@ NAV = '''<nav class="nav"><div class="wrap">
 <a class="lnk" href="index.html#research">Research</a>
 <a class="lnk" href="people.html">People</a>
 <a class="lnk" href="publications.html" aria-current="page">Publications</a>
+<a class="lnk" href="join.html">Join Us</a>
 </div></nav>'''
 
 FOOTER = '''<footer><div class="wrap">
