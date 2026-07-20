@@ -142,7 +142,7 @@ footer a{color:#B9C0C7}
 @media(max-width:720px){
   .res{grid-template-columns:1fr}
   .res-head{position:static}
-  .nav .wrap{gap:1.1rem;overflow-x:auto}
+  .nav .wrap{gap:1.1rem}
   .brand-inst{display:none}
   .brand .mark{width:23px;height:23px;flex-basis:23px}
   .pi{grid-template-columns:1fr}
@@ -205,3 +205,21 @@ footer a{color:#B9C0C7}
 .sec > .wrap > :last-child{margin-bottom:0}
 .sec > .wrap::after{content:"";display:block;height:1.6rem}
 @media (max-width:720px){.sec > .wrap::after{height:1.1rem}}
+
+
+/* ============ nav on small screens ============ */
+/* The nav was a silent horizontal scroll strip (overflow-x:auto), so a fourth
+   link simply ran off the edge with nothing to indicate it. Instead the row
+   wraps. margin-right:auto on .brand would push the links to the right edge,
+   so a wrapped link would sit far from the others; giving the brand the whole
+   first row instead means the links form their own left-aligned row beneath
+   it, and any wrap continues under Research rather than under Publications. */
+@media (max-width:720px){
+  .nav .wrap{flex-wrap:wrap;height:auto;align-items:center;
+             padding-block:.65rem;row-gap:.5rem;justify-content:flex-start}
+  .brand{margin-right:0;flex:0 0 100%}
+  .nav a.lnk{font-size:.94rem}
+}
+@media (max-width:560px){
+  .nav .wrap{gap:.9rem;row-gap:.5rem}
+}
