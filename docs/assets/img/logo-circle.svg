@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="t d">
+<title id="t">Murthy Lab</title>
+<desc id="d">A coronary vessel tapering into molecular measurement points, within a circle.</desc>
+<circle cx="60" cy="60" r="60" fill="#12161C"/>
+<g fill="none" stroke-linecap="round">
+<path d="M60 30 C60 48 60 54 47 64 C35 73 31 81 31 94" stroke="#F7F6F3" stroke-width="4.6"/>
+<path d="M60 49 C71 57 77 66 83 80" stroke="#F7F6F3" stroke-width="3.3"/>
+<path d="M47 64 C56 72 58 80 60 93" stroke="#C87F32" stroke-width="2.4"/>
+</g>
+<g fill="#5FA3B5">
+<circle cx="30" cy="96" r="3.5"/>
+<circle cx="52" cy="97" r="3.5"/>
+<circle cx="79" cy="87" r="3.5"/>
+</g>
+<g fill="#5FA3B5" fill-opacity=".7">
+<circle cx="69" cy="97" r="2.5"/>
+<circle cx="89" cy="92" r="2.5"/>
+</g>
+<g fill="#8C7BA0">
+<circle cx="60" cy="94" r="3.5"/>
+<circle cx="39" cy="100" r="2.5" fill-opacity=".7"/>
+</g>
+</svg>

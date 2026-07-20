@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="200" height="130" role="img" aria-labelledby="t3 d3">
+<title id="t3">Waveform to physiologic estimate</title>
+<desc id="d3">Repeated ECG complexes fading into the distance, passed through a model to yield an estimate of coronary flow reserve.</desc>
+<path d="M12 62 L26 62 L32 62 L38 40 L44 88 L50 50 L56 62 L74 62"
+      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M74 62 L88 62 L94 62 L100 40 L106 88 L112 50 L118 62 L132 62"
+      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" opacity=".42"/>
+<path d="M132 62 L140 62 L144 62 L148 46 L152 80 L156 54 L160 62 L168 62"
+      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" opacity=".16"/>
+<line x1="150" y1="96" x2="172" y2="96" stroke="var(--ai-node,#6B5B7B)" stroke-width="1.5" stroke-dasharray="3.5 3.5"/>
+<circle cx="182" cy="80" r="4" fill="var(--ai-node,#6B5B7B)" opacity=".3"/>
+<circle cx="182" cy="96" r="5.5" fill="var(--ai-node,#6B5B7B)"/>
+<circle cx="182" cy="112" r="4" fill="var(--ai-node,#6B5B7B)" opacity=".3"/>
+</svg>

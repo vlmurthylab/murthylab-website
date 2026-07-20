@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Murthy Lab">
+<circle cx="60" cy="60" r="60" fill="#12161C"/>
+<g fill="none" stroke-linecap="round">
+<path d="M60 28 C60 48 60 55 46 66 C33 76 29 85 29 99" stroke="#F7F6F3" stroke-width="6.5"/>
+<path d="M60 49 C72 58 79 68 85 83" stroke="#F7F6F3" stroke-width="4.8"/>
+<path d="M46 66 C56 75 59 84 61 98" stroke="#C87F32" stroke-width="3.6"/>
+</g>
+<g fill="#5FA3B5">
+<circle cx="28" cy="102" r="5"/>
+<circle cx="61" cy="101" r="5"/>
+<circle cx="88" cy="90" r="5"/>
+</g>
+<g fill="#8C7BA0">
+<circle cx="44" cy="104" r="5"/>
+<circle cx="75" cy="100" r="4"/>
+</g>
+</svg>

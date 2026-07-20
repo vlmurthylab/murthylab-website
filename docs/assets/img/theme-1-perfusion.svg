@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="200" height="130" role="img" aria-labelledby="t1 d1">
+<title id="t1">Cardiac PET time-activity curves</title>
+<desc id="d1">Arterial input function peaking early and clearing, with slower myocardial uptake rising to a plateau.</desc>
+<line x1="16" y1="106" x2="188" y2="106" stroke="currentColor" stroke-width="1" opacity=".28"/>
+<line x1="16" y1="14" x2="16" y2="106" stroke="currentColor" stroke-width="1" opacity=".28"/>
+<path d="M16 106 L27 100 L34 20 L41 47 L50 68 L62 84 L80 94 L102 100 L131 103 L176 104"
+      fill="none" stroke="var(--tac-input,#C87F32)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M16 106 L28 105 L39 93 L53 78 L68 67 L87 60 L110 57 L136 56 L159 56 L176 56"
+      fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="34" cy="20" r="2.8" fill="var(--tac-input,#C87F32)"/>
+</svg>
