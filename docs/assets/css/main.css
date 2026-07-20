@@ -105,6 +105,7 @@ a{color:inherit}
 .profile-links a:hover{color:var(--ink);border-color:#C4BEB2}
 .sub{font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
   color:var(--ink-soft);margin:2.4rem 0 1.3rem}
+.alumni{max-width:var(--measure);margin:0;color:#2B313A}
 
 /* ============ publications ============ */
 .pub-profiles{font-family:var(--display);font-size:var(--step--1);color:var(--ink-soft);
