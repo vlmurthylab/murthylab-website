@@ -1,0 +1,666 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Murthy Lab &middot; University of Michigan</title>
+<meta name="description" content="Cardiac imaging, multiomic signatures, and machine learning to uncover mechanisms of cardiovascular disease.">
+<link rel="canonical" href="https://murthylab.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Murthy Lab">
+<meta property="og:title" content="Murthy Lab · University of Michigan">
+<meta property="og:description" content="Teaching machines to diagnose what humans can't see: cardiac imaging, multiomics, and machine learning.">
+<meta property="og:url" content="https://murthylab.org/">
+<meta property="og:image" content="https://murthylab.org/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Murthy Lab, University of Michigan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Murthy Lab · University of Michigan">
+<meta name="twitter:description" content="Teaching machines to diagnose what humans can't see: cardiac imaging, multiomics, and machine learning.">
+<meta name="twitter:image" content="https://murthylab.org/assets/img/og-card.png">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJNdXJ0aHkgTGFiIj4KPGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiIGZpbGw9IiMxMjE2MUMiLz4KPGcgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KPHBhdGggZD0iTTYwIDI4IEM2MCA0OCA2MCA1NSA0NiA2NiBDMzMgNzYgMjkgODUgMjkgOTkiIHN0cm9rZT0iI0Y3RjZGMyIgc3Ryb2tlLXdpZHRoPSI2LjUiLz4KPHBhdGggZD0iTTYwIDQ5IEM3MiA1OCA3OSA2OCA4NSA4MyIgc3Ryb2tlPSIjRjdGNkYzIiBzdHJva2Utd2lkdGg9IjQuOCIvPgo8cGF0aCBkPSJNNDYgNjYgQzU2IDc1IDU5IDg0IDYxIDk4IiBzdHJva2U9IiNDODdGMzIiIHN0cm9rZS13aWR0aD0iMy42Ii8+CjwvZz4KPGcgZmlsbD0iIzVGQTNCNSI+CjxjaXJjbGUgY3g9IjI4IiBjeT0iMTAyIiByPSI1Ii8+CjxjaXJjbGUgY3g9IjYxIiBjeT0iMTAxIiByPSI1Ii8+CjxjaXJjbGUgY3g9Ijg4IiBjeT0iOTAiIHI9IjUiLz4KPC9nPgo8ZyBmaWxsPSIjOEM3QkEwIj4KPGNpcmNsZSBjeD0iNDQiIGN5PSIxMDQiIHI9IjUiLz4KPGNpcmNsZSBjeD0iNzUiIGN5PSIxMDAiIHI9IjQiLz4KPC9nPgo8L3N2Zz4K" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<style>
+/* ============ tokens ============ */
+:root{
+  --ground:#1A1712; --paper:#1A1712; --ink:#F3F0EA; --ink-soft:#B5AC9E;
+  --rule:#332C22;
+  --amber:#E0A968;      /* perfusion   */
+  --mark-amber:#E0A968; --mark-cyan:#8CC5D3; --mark-violet:#B4A6C4;
+  --cyan:#8CC5D3;       /* multiomics  */
+  --violet:#B4A6C4;     /* ai/ml       */
+  --measure:64ch;
+  --step--1:clamp(.78rem,.74rem + .18vw,.86rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.08rem);
+  --step-1:clamp(1.25rem,1.15rem + .5vw,1.5rem);
+  --step-2:clamp(1.6rem,1.4rem + 1vw,2.2rem);
+  --step-3:clamp(2.2rem,1.7rem + 2.4vw,3.9rem);
+  --display:"Inter","Helvetica Neue",-apple-system,BlinkMacSystemFont,sans-serif;
+  --body:"Iowan Old Style","Charter","Georgia",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:var(--step-0);line-height:1.62;
+  font-feature-settings:"kern","liga";-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
+
+/* ============ nav ============ */
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.93);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:baseline;gap:2.4rem;height:68px}
+.brand{font-family:var(--display);text-decoration:none;margin-right:auto;
+  align-self:center;display:flex;align-items:center;gap:.6rem;line-height:1;color:var(--ink)}
+.brand .mark{width:26px;height:26px;flex:0 0 26px;display:block}
+.brand-name{font-weight:650;letter-spacing:-.025em;font-size:1.28rem}
+.brand-inst{font-weight:400;font-size:.72rem;letter-spacing:.02em;color:var(--ink-soft);
+  padding-left:.6rem;border-left:1px solid var(--rule);align-self:center}
+.nav a.lnk{font-family:var(--display);font-size:var(--step-0);font-weight:500;
+  letter-spacing:-.005em;text-decoration:none;color:#343B44;padding:.25rem 0;
+  border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.nav a.lnk:hover,.nav a.lnk[aria-current]{color:var(--ink);border-bottom-color:var(--amber)}
+
+/* ============ hero ============ */
+.hero{background:var(--ground);color:var(--paper);position:relative;overflow:hidden;
+  padding:clamp(4rem,11vh,8rem) 0 clamp(3.5rem,8vh,6rem)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-family:var(--display);font-weight:600;font-size:var(--step-3);
+  line-height:1.04;letter-spacing:-.035em;margin:0 0 1.3rem;max-width:19ch}
+.hero p.dek{max-width:56ch;color:#C6D2E0;font-size:var(--step-1);line-height:1.5;margin:0}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--amber);margin:0 0 1.6rem}
+#field{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.9}
+
+/* ============ theme cards ============ */
+.themes{padding:clamp(3.5rem,9vh,6rem) 0}
+.tgrid{display:grid;gap:1px;background:var(--rule);
+  grid-template-columns:repeat(auto-fit,minmax(258px,1fr));border:1px solid var(--rule)}
+.tcard{background:var(--paper);padding:1.9rem 1.6rem 2.1rem;text-decoration:none;
+  display:block;transition:background .18s}
+.tcard:hover{background:#FCFBF9}
+.tcard .mk{width:26px;height:3px;display:block;margin-bottom:1.1rem}
+.tcard h3{font-family:var(--display);font-weight:600;font-size:var(--step-1);
+  letter-spacing:-.02em;line-height:1.18;margin:0 0 .55rem}
+.tcard p{margin:0;color:var(--ink-soft);font-size:var(--step--1);line-height:1.55}
+.t1 .mk{background:var(--amber)} .t2 .mk{background:var(--cyan)} .t3 .mk{background:var(--violet)}
+
+/* ============ sections ============ */
+.sec{padding:clamp(3.2rem,8vh,5.5rem) 0;border-top:1px solid var(--rule)}
+.sec-h{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 2.4rem;padding-bottom:.7rem;border-bottom:1px solid var(--rule)}
+.res{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr);
+  gap:clamp(1.5rem,5vw,4rem);margin-bottom:clamp(3rem,7vh,5rem)}
+.res:last-child{margin-bottom:0}
+.res h2{font-family:var(--display);font-weight:600;font-size:var(--step-2);
+  letter-spacing:-.028em;line-height:1.1;margin:0}
+.res .lede{font-size:var(--step-1);line-height:1.45;margin:0 0 1.4rem;
+  max-width:var(--measure);letter-spacing:-.01em}
+.res p{max-width:var(--measure);margin:0 0 1.05rem;color:#2B313A}
+.res p:last-child{margin-bottom:0}
+.stat{font-family:var(--mono);font-size:.94em;font-variant-numeric:tabular-nums;
+  border-bottom:1px solid currentColor;padding-bottom:.5px}
+.r1 .stat{color:#94591A} .r2 .stat{color:#2F6273} .r3 .stat{color:#584A66}
+
+/* ============ people ============ */
+.plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:1.6rem 1.4rem}
+.p{display:flex;gap:.85rem;align-items:center}
+.av{width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:#EAE6DE;
+  display:grid;place-items:center;font-family:var(--mono);font-size:.72rem;
+  color:var(--ink-soft);letter-spacing:.02em;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.p .nm{font-family:var(--display);font-weight:550;font-size:var(--step--1);
+  letter-spacing:-.01em;line-height:1.25;display:block}
+.p .rl{font-size:.78rem;color:var(--ink-soft);line-height:1.35;display:block;margin-top:.12rem}
+.p .nm a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.p .nm a:hover,.p .nm a:focus-visible{border-bottom-color:var(--cyan)}
+.pi{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.6rem;
+  margin-bottom:2.6rem;padding-bottom:2.4rem;border-bottom:1px solid var(--rule);align-items:start}
+.pi .av{width:92px;height:92px;flex-basis:92px;font-size:1.15rem}
+.pi h2{font-family:var(--display);font-weight:600;font-size:var(--step-1);
+  letter-spacing:-.02em;margin:0 0 .3rem}
+.pi .titles{font-family:var(--display);font-size:var(--step--1);color:var(--ink-soft);
+  margin:0 0 1rem;line-height:1.45}
+.pi p.bio{max-width:var(--measure);margin:0}
+.profile-links{margin:1.1rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem .55rem}
+.profile-links a{font-family:var(--display);font-size:.78rem;color:var(--ink-soft);
+  text-decoration:none;border:1px solid var(--rule);border-radius:2px;
+  padding:.24rem .6rem;transition:border-color .15s,color .15s}
+.profile-links a:hover{color:var(--ink);border-color:#C4BEB2}
+.sub{font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-soft);margin:2.4rem 0 1.3rem}
+.alumni{max-width:var(--measure);margin:0;color:#2B313A}
+
+/* ============ publications ============ */
+.pub-profiles{font-family:var(--display);font-size:var(--step--1);color:var(--ink-soft);
+  margin:-1.4rem 0 1.8rem}
+.pub-profiles a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--amber)}
+.filters{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.4rem}
+.fb{font-family:var(--display);font-size:var(--step--1);background:none;cursor:pointer;
+  border:1px solid var(--rule);padding:.4rem .85rem;border-radius:2px;color:var(--ink-soft);
+  transition:all .15s}
+.fb:hover{border-color:#C4BEB2}
+.fb[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fb .n{font-family:var(--mono);font-size:.72em;opacity:.65;margin-left:.4rem}
+.count{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin:0 0 1.6rem}
+.yr{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--ink-soft);
+  padding-top:1.5rem;border-top:1px solid var(--rule);margin-top:1.5rem}
+.pub{padding:.85rem 0;border-bottom:1px solid #EDEAE4}
+.pub .ti{display:block;font-size:.97rem;line-height:1.45;margin-bottom:.22rem;
+  text-decoration:none;border-bottom:1px solid transparent}
+.pub a.ti:hover{border-bottom-color:var(--amber)}
+.pub .meta{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+.pub .jr{font-style:italic}
+.pub .dot{display:inline-block;width:5px;height:5px;border-radius:50%;margin-right:.45rem;
+  vertical-align:.08em}
+.d-vasomotor{background:var(--amber)} .d-multiomics{background:var(--cyan)} .d-ai{background:var(--violet)}
+
+/* ============ footer ============ */
+footer{background:var(--ground);color:#8A9199;padding:2.6rem 0;
+  font-family:var(--display);font-size:var(--step--1)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:#B9C0C7}
+
+@media(max-width:720px){
+  .res{grid-template-columns:1fr}
+  .res-head{position:static}
+  .nav .wrap{gap:1.1rem}
+  .brand-inst{display:none}
+  .brand .mark{width:23px;height:23px;flex-basis:23px}
+  .pi{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+
+/* --- U-M palette -------------------------------------------------- */
+
+/* Second research section on a warm band. Painted with box-shadow rather
+   than a pseudo-element: body carries background:var(--paper), so a
+   z-index:-1 element would paint behind it and disappear in Firefox. */
+.res{padding-block:clamp(2.4rem,5vh,3.6rem);margin-bottom:0}
+.res.r2{background:#F1EEE7;
+        box-shadow:0 0 0 100vmax #F1EEE7;
+        clip-path:inset(0 -100vmax)}
+.sec{padding-bottom:0}
+@media (max-width:900px){.res{padding-block:2.2rem}}
+
+/* Maize only ever on the blue ground - 9.9:1 there, 1.4:1 on white. */
+.hero .stat{color:#FFCB05}
+.site-footer a{color:#FFCB05}
+
+/* Section eyebrows in blue rather than grey. */
+.sec-h{color:#00274C;border-bottom-color:#00274C}
+
+/* --- theme graphics ------------------------------------------------ */
+/* .res is a two-column grid; .res-head holds the heading and its figure
+   together in the sticky left column. */
+.res-head{position:sticky;top:96px;align-self:start}
+.res-head h2{position:static}
+.res-fig{display:block;width:100%;max-width:200px;height:auto;margin-top:1.4rem;
+         color:var(--ink)}
+.res.r1 .res-fig{--tac-input:var(--amber)}
+.res.r2 .res-fig{--cca-a:var(--cyan);--cca-b:var(--violet)}
+.res.r3 .res-fig{--ai-node:var(--violet)}
+@media (max-width:720px){
+  .res-head{position:static}
+  .res-fig{margin:1rem 0 .5rem;max-width:170px}
+}
+
+/* ============ join us ============ */
+.join-lede{max-width:var(--measure);margin:0 0 1.2rem}
+.join-intro{max-width:var(--measure);margin:0 0 .4rem;color:#2B313A}
+.jlist{display:grid;gap:1.6rem}
+.j h3{font-family:var(--display);font-weight:600;font-size:var(--step-1);
+  letter-spacing:-.018em;line-height:1.25;margin:0 0 .4rem}
+.j p{max-width:var(--measure);margin:0;color:#2B313A}
+.join-apply{max-width:var(--measure);margin:0;color:#2B313A}
+
+
+/* ============ section rhythm ============ */
+/* .sec has symmetric padding, but the last child of a section is normally a
+   paragraph with margin:0, so the space below the final line reads as smaller
+   than the space above the heading. Add a consistent tail to every section
+   rather than a bottom margin on each individual class. */
+.sec > .wrap > :last-child{margin-bottom:0}
+.sec > .wrap::after{content:"";display:block;height:1.6rem}
+@media (max-width:720px){.sec > .wrap::after{height:1.1rem}}
+
+
+/* ============ nav on small screens ============ */
+/* The nav was a silent horizontal scroll strip (overflow-x:auto), so a fourth
+   link simply ran off the edge with nothing to indicate it. Instead the row
+   wraps. margin-right:auto on .brand would push the links to the right edge,
+   so a wrapped link would sit far from the others; giving the brand the whole
+   first row instead means the links form their own left-aligned row beneath
+   it, and any wrap continues under Research rather than under Publications. */
+@media (max-width:720px){
+  .nav .wrap{flex-wrap:wrap;height:auto;align-items:center;
+             padding-block:.65rem;row-gap:.5rem;justify-content:flex-start}
+  .brand{margin-right:0;flex:0 0 100%}
+  .nav a.lnk{font-size:.94rem}
+}
+@media (max-width:560px){
+  .nav .wrap{gap:.9rem;row-gap:.5rem}
+}
+
+/* ============ theme figure animation ============ */
+/* Each figure plays once when it scrolls into view. The JS adds .in to the
+   <img>'s parent; nothing depends on the animation having run, so if the
+   script never fires the figures simply show their finished state. */
+
+/* Resting state = the finished drawing. Only elements inside .res-fig.armed
+   are hidden, and .armed is set by script, so a no-JS visitor sees everything. */
+.res-fig.armed .tac-input,
+.res-fig.armed .tac-myo,
+.res-fig.armed .ecg{stroke-dasharray:100;stroke-dashoffset:100}
+.res-fig.armed .tac-peak,
+.res-fig.armed .ai-node,
+.res-fig.armed .ai-link{opacity:0}
+.res-fig.armed .cca-a,
+.res-fig.armed .cca-b,
+.res-fig.armed .cca-axis{opacity:0}
+.res-fig.armed .cca-bar{transform:scaleY(0);transform-origin:0 100%;
+                        transform-box:fill-box}
+
+/* --- theme 1: arterial input draws first, myocardium follows --- */
+.res-fig.in .tac-input{animation:draw 1.05s cubic-bezier(.4,0,.3,1) forwards}
+.res-fig.in .tac-myo{animation:draw 1.35s cubic-bezier(.4,0,.3,1) .28s forwards}
+.res-fig.in .tac-peak{animation:fade .3s ease-out .42s forwards}
+
+/* --- theme 2: diet block, then metabolites, then the shared axis --- */
+.res-fig.in .cca-a{animation:fade .42s ease-out forwards}
+.res-fig.in .cca-b{animation:fade .42s ease-out .38s forwards}
+.res-fig.in .cca-axis{animation:fade .4s ease-out .82s forwards}
+.res-fig.in .cca-bar{animation:grow .5s cubic-bezier(.3,0,.2,1) 1.02s forwards}
+
+/* --- theme 3: complexes trace in sequence, then the model resolves --- */
+.res-fig.in .ecg-1{animation:draw .62s linear forwards}
+.res-fig.in .ecg-2{animation:draw .62s linear .5s forwards}
+.res-fig.in .ecg-3{animation:draw .62s linear 1s forwards}
+.res-fig.in .ai-link{animation:fade .35s ease-out 1.5s forwards}
+.res-fig.in .ai-node-b{animation:fade .35s ease-out 1.72s forwards}
+.res-fig.in .ai-node-a,
+.res-fig.in .ai-node-c{animation:fade .35s ease-out 1.88s forwards}
+
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes grow{to{transform:scaleY(1)}}
+
+/* Anyone who has asked for less motion gets the finished figure immediately. */
+@media (prefers-reduced-motion:reduce){
+  .res-fig.armed .tac-input,.res-fig.armed .tac-myo,.res-fig.armed .ecg{
+    stroke-dasharray:none;stroke-dashoffset:0}
+  .res-fig.armed .tac-peak,.res-fig.armed .ai-node,.res-fig.armed .ai-link,
+  .res-fig.armed .cca-a,.res-fig.armed .cca-b,.res-fig.armed .cca-axis{opacity:1}
+  .res-fig.armed .cca-bar{transform:none}
+  .res-fig.in *{animation:none !important}
+}
+
+
+/* ---- whole-page dark: D — Warm charcoal ---- */
+.nav{background:#1A1712ee;border-bottom-color:#332C22}
+.nav a.lnk{color:#B5AC9E}
+.nav a.lnk:hover,.nav a.lnk[aria-current]{color:#F3F0EA}
+.hero{background:#1A1712}
+.hero p.dek{color:#B5AC9E}
+.res.r2{background:#231F18;box-shadow:0 0 0 100vmax #231F18;
+        clip-path:inset(0 -100vmax)}
+.res p{color:#B5AC9E}
+.res .lede{color:#F3F0EA}
+.tcard{background:#231F18;border-color:#332C22}
+.tcard:hover{background:#332C22}
+.tcard p{color:#B5AC9E}
+.p .rl{color:#B5AC9E}
+.av{background:#231F18;color:#B5AC9E}
+.sec-h{color:#B5AC9E;border-bottom-color:#332C22}
+.sub{color:#B5AC9E}
+.alumni,.join-intro,.j p,.join-apply{color:#B5AC9E}
+.profile-links a{border-color:#332C22;color:#B5AC9E}
+.profile-links a:hover{color:#F3F0EA;border-color:#B5AC9E}
+.pub{border-bottom-color:#332C22}
+.pub .jr,.pub-profiles,.count{color:#B5AC9E}
+.hero .stat{color:#E0A968}
+.r1 .stat{color:#E0A968} .r2 .stat{color:#8CC5D3} .r3 .stat{color:#B4A6C4}
+footer{background:#1A1712;border-top-color:#332C22}
+footer span{color:#B5AC9E}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ResearchOrganization",
+      "@id": "https://murthylab.org/#lab",
+      "name": "Murthy Lab",
+      "url": "https://murthylab.org",
+      "logo": "https://murthylab.org/assets/img/og-card.png",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Michigan",
+        "url": "https://umich.edu"
+      },
+      "department": {
+        "@type": "Organization",
+        "name": "Division of Cardiovascular Medicine"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1338 Cardiovascular Center",
+        "addressLocality": "Ann Arbor",
+        "addressRegion": "MI",
+        "postalCode": "48109",
+        "addressCountry": "US"
+      },
+      "founder": { "@id": "https://murthylab.org/#murthy" },
+      "knowsAbout": [
+        "Cardiac positron emission tomography",
+        "Coronary microvascular dysfunction",
+        "Coronary flow reserve",
+        "Metabolomics",
+        "Proteomics",
+        "Cardiometabolic disease",
+        "Machine learning in cardiovascular medicine",
+        "Electrocardiography"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://murthylab.org/#murthy",
+      "name": "Venkatesh L. Murthy",
+      "givenName": "Venkatesh",
+      "familyName": "Murthy",
+      "honorificSuffix": "MD, PhD",
+      "jobTitle": "Professor of Internal Medicine and Radiology",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "https://orcid.org/0000-0002-7901-1321"
+      },
+      "sameAs": [
+        "https://orcid.org/0000-0002-7901-1321",
+        "https://scholar.google.com/citations?user=nNET6osAAAAJ",
+        "https://midas.umich.edu/directory/venkatesh-murthy/"
+      ],
+      "affiliation": { "@id": "https://murthylab.org/#lab" },
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Michigan"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://murthylab.org/#website",
+      "url": "https://murthylab.org",
+      "name": "Murthy Lab",
+      "publisher": { "@id": "https://murthylab.org/#lab" }
+    }
+  ]
+}
+</script>
+</head><body><div style="position:sticky;top:0;z-index:9999;background:#000;color:#fff;font:13px/1.4 system-ui,sans-serif;padding:.55rem 1rem;display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap"><strong style="flex:0 0 auto">D — Warm charcoal</strong><span style="opacity:.7;flex:1 1 14rem">A warm dark rather than a cool one. The amber sits naturally here; the cyan has to work harder.</span><a href="index.html" style="margin-left:auto;color:#7FB6DD;flex:0 0 auto">all</a></div>
+<nav class="nav"><div class="wrap">
+<a class="brand" href="index.html"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round"><path d="M60 24 C60 48 60 56 42 70 C26 82 20 93 20 110" stroke="currentColor" stroke-width="6"/><path d="M60 50 C75 60 83 72 91 91" stroke="currentColor" stroke-width="4.3"/><path d="M42 70 C54 80 57 91 59 108" stroke="var(--mark-amber)" stroke-width="3.1"/></g><g fill="var(--mark-cyan)"><circle cx="18" cy="112" r="4.6"/><circle cx="48" cy="114" r="4.6"/><circle cx="86" cy="100" r="4.6"/></g><g fill="var(--mark-cyan)" fill-opacity=".7"><circle cx="72" cy="113" r="3.3"/><circle cx="99" cy="106" r="3.3"/></g><g fill="var(--mark-violet)"><circle cx="59" cy="110" r="4.6"/><circle cx="30" cy="118" r="3.3" fill-opacity=".7"/></g></svg><span class="brand-name">Murthy Lab</span><span class="brand-inst">University of Michigan</span></a>
+<a class="lnk" href="index.html#research">Research</a>
+<a class="lnk" href="#">People</a>
+<a class="lnk" href="#">Publications</a>
+<a class="lnk" href="#">Join Us</a>
+</div></nav>
+<header class="hero">
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="wrap">
+<p class="eyebrow">University of Michigan &middot; Division of Cardiovascular Medicine</p>
+<h1>Teaching machines to diagnose what humans can&rsquo;t see.</h1>
+<p class="dek">We teach machines to use cardiac imaging, multiomic signatures, and ECGs to uncover
+mechanisms of cardiovascular disease and enable diagnosis where none was possible.</p>
+</div></header>
+
+<section class="themes"><div class="wrap"><div class="tgrid"><a class="tcard t1" href="#r1"><span class="mk"></span><h2>Coronary vasomotor and microvascular dysfunction</h2><p>Quantifying impaired vasodilator function in vessels below the resolution of angiography — and showing it predicts death.</p></a>
+<a class="tcard t2" href="#r2"><span class="mk"></span><h2>Multiomic biomarkers and mechanistic inference</h2><p>Metabolomic, proteomic, and genetic signatures in longitudinal cohorts, read for pathway as well as prediction.</p></a>
+<a class="tcard t3" href="#r3"><span class="mk"></span><h2>AI and machine learning for imaging and risk</h2><p>Foundation models and deep learning that extend quantitative capability to widely available tests.</p></a></div></div></section>
+
+<section class="sec" id="research"><div class="wrap">
+<h2 class="sec-h">Research</h2>
+<div class="res r1" id="r1"><div class="res-head"><h2>Coronary vasomotor and microvascular dysfunction</h2><svg class="res-fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="200" height="130" role="img" aria-labelledby="t1-t1 t1-d1">
+<title id="t1-t1">Cardiac PET time-activity curves</title>
+<desc id="t1-d1">Arterial input function peaking early and clearing, with slower myocardial uptake rising to a plateau.</desc>
+<line x1="16" y1="106" x2="188" y2="106" stroke="currentColor" stroke-width="1" opacity=".28"/>
+<line x1="16" y1="14" x2="16" y2="106" stroke="currentColor" stroke-width="1" opacity=".28"/>
+<path class="tac-input" d="M16 106 L27 100 L34 20 L41 47 L50 68 L62 84 L80 94 L102 100 L131 103 L176 104"
+      fill="none" stroke="var(--tac-input,#C87F32)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"
+      pathLength="100"/>
+<path class="tac-myo" d="M16 106 L28 105 L39 93 L53 78 L68 67 L87 60 L110 57 L136 56 L159 56 L176 56"
+      fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"
+      pathLength="100"/>
+<circle class="tac-peak" cx="34" cy="20" r="2.8" fill="var(--tac-input,#C87F32)"/>
+</svg></div><div><p class="lede">Approximately half of patients referred for cardiac stress testing have impaired coronary vasomotor function despite normal perfusion imaging.</p><p>Standard cardiac testing detects flow-limiting epicardial stenosis. Most of the coronary
+  circulation, however, consists of vessels below the resolution of angiography, and impaired
+  vasodilator capacity in these vessels carries prognostic significance independent of anatomic
+  disease.</p><p>We quantified coronary flow reserve by cardiac PET in <span class="stat">2,783</span> patients
+  referred for rest/stress imaging. Patients in the lowest tertile of flow reserve had a
+  <span class="stat">5.6-fold</span> higher risk of cardiac death (95% CI 2.5&ndash;12.4) after adjustment for
+  clinical risk factors, left ventricular ejection fraction, and the extent of scar and ischemia.
+  Incorporation of flow reserve into risk models correctly reclassified <span class="stat">34.8%</span>
+  of intermediate-risk patients.</p><p>We subsequently examined <span class="stat">1,218</span> patients without known coronary disease and
+  with visually normal stress perfusion imaging. Coronary microvascular dysfunction, defined as flow
+  reserve below 2.0, was present in <span class="stat">51%</span> of men and <span class="stat">54%</span>
+  of women (equivalence P=0.0002). Flow reserve was similarly predictive of major adverse cardiac events
+  in both sexes, with no significant sex-by-flow-reserve interaction. Among the subgroup with coronary
+  artery calcium scores of zero, microvascular dysfunction remained common (44% of men, 48% of women).</p><p>These findings established coronary microvascular dysfunction as a prevalent, prognostically
+  significant condition affecting both sexes, rather than a diagnosis of exclusion specific to women.
+  Current work addresses the reproducibility of flow quantification across centers and scanner platforms,
+  and the therapeutic implications of impaired vasomotor function.</p></div></div><div class="res r2" id="r2"><div class="res-head"><h2>Multiomic cardiometabolic biomarkers and mechanistic inference</h2><svg class="res-fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="200" height="130" role="img" aria-labelledby="t2-t2 t2-d2">
+<title id="t2-t2">Canonical correlation of two data blocks</title>
+<desc id="t2-d2">A block of dietary exposures and a block of metabolite levels resolved onto a single shared axis, with loadings shown as marginal bars.</desc>
+<g class="cca-a" fill="var(--cca-a,#3E7C8C)">
+<rect x="14" y="20" width="12" height="12" opacity=".85"/><rect x="27" y="20" width="12" height="12" opacity=".3"/>
+<rect x="40" y="20" width="12" height="12" opacity=".6"/><rect x="53" y="20" width="12" height="12" opacity=".2"/>
+<rect x="14" y="33" width="12" height="12" opacity=".25"/><rect x="27" y="33" width="12" height="12" opacity=".7"/>
+<rect x="40" y="33" width="12" height="12" opacity=".35"/><rect x="53" y="33" width="12" height="12" opacity=".8"/>
+<rect x="14" y="46" width="12" height="12" opacity=".6"/><rect x="27" y="46" width="12" height="12" opacity=".2"/>
+<rect x="40" y="46" width="12" height="12" opacity=".85"/><rect x="53" y="46" width="12" height="12" opacity=".4"/>
+<rect x="14" y="59" width="12" height="12" opacity=".3"/><rect x="27" y="59" width="12" height="12" opacity=".55"/>
+<rect x="40" y="59" width="12" height="12" opacity=".25"/><rect x="53" y="59" width="12" height="12" opacity=".7"/>
+<rect class="cca-bar" x="14" y="75" width="12" height="11"/><rect class="cca-bar" x="27" y="75" width="12" height="6"/>
+<rect class="cca-bar" x="40" y="75" width="12" height="15"/><rect class="cca-bar" x="53" y="75" width="12" height="5"/>
+</g>
+<circle class="cca-axis" cx="100" cy="46" r="11" fill="none" stroke="currentColor" stroke-width="1.7"/>
+<line class="cca-axis" x1="94.5" y1="40.5" x2="105.5" y2="51.5" stroke="currentColor" stroke-width="1.7"/>
+<line class="cca-axis" x1="105.5" y1="40.5" x2="94.5" y2="51.5" stroke="currentColor" stroke-width="1.7"/>
+<g class="cca-b" fill="var(--cca-b,#6B5B7B)">
+<rect x="135" y="20" width="12" height="12" opacity=".3"/><rect x="148" y="20" width="12" height="12" opacity=".75"/>
+<rect x="161" y="20" width="12" height="12" opacity=".25"/><rect x="174" y="20" width="12" height="12" opacity=".6"/>
+<rect x="135" y="33" width="12" height="12" opacity=".8"/><rect x="148" y="33" width="12" height="12" opacity=".2"/>
+<rect x="161" y="33" width="12" height="12" opacity=".55"/><rect x="174" y="33" width="12" height="12" opacity=".35"/>
+<rect x="135" y="46" width="12" height="12" opacity=".25"/><rect x="148" y="46" width="12" height="12" opacity=".65"/>
+<rect x="161" y="46" width="12" height="12" opacity=".85"/><rect x="174" y="46" width="12" height="12" opacity=".2"/>
+<rect x="135" y="59" width="12" height="12" opacity=".7"/><rect x="148" y="59" width="12" height="12" opacity=".3"/>
+<rect x="161" y="59" width="12" height="12" opacity=".4"/><rect x="174" y="59" width="12" height="12" opacity=".75"/>
+<rect class="cca-bar" x="135" y="75" width="12" height="7"/><rect class="cca-bar" x="148" y="75" width="12" height="13"/>
+<rect class="cca-bar" x="161" y="75" width="12" height="5"/><rect class="cca-bar" x="174" y="75" width="12" height="10"/>
+</g>
+</svg></div><div><p class="lede">We apply metabolomic, proteomic, and genetic profiling in longitudinal population cohorts to identify molecular signatures that precede clinical cardiovascular disease and to generate hypotheses about the pathways involved.</p><p>Conventional risk factors classify populations but provide limited insight into individual
+  pathophysiology, particularly in young adults, in whom event rates are low and risk scores perform
+  poorly. Deep molecular phenotyping in cohorts with extended follow-up offers a route to both earlier
+  risk discrimination and mechanistic inference.</p><p>Dietary intake in epidemiologic studies is characterized almost entirely by self-report, which
+  captures reported consumption rather than the metabolic response to it. In <span class="stat">2,259</span>
+  CARDIA participants profiled at a mean age of <span class="stat">32 years</span>, we used penalized
+  canonical correlation analysis to relate intake across <span class="stat">17 food groups</span> to the
+  circulating metabolome. The first canonical variate loaded positively on red and processed meat, eggs,
+  chicken, and sugary drinks, and negatively on vegetables, dairy, grains, and fruit. In fully adjusted Cox
+  models, the resulting metabolite score was associated with incident diabetes (standardized HR
+  <span class="stat">1.62</span>, 95% CI 1.32&ndash;1.97, P&lt;0.0001) and cardiovascular disease (HR
+  <span class="stat">1.55</span>, 95% CI 1.12&ndash;2.14, P=0.008), with effect sizes numerically greater
+  than the survey-based HEI-2015 score for both outcomes, though the confidence intervals overlapped. The
+  diabetes association replicated in <span class="stat">2,006</span> participants of the Framingham Heart
+  Study.</p><p>We have applied a similar approach to individual exposures. Lipoprotein(a)
+  concentration is largely genetically determined and relatively stable across the lifespan, and although
+  it is an established risk factor for atherosclerotic cardiovascular disease, the pathways linking it to
+  clinical events remain incompletely defined. We measured <span class="stat">184</span> cardiovascular
+  proteins in <span class="stat">3,920</span> CARDIA participants without prevalent coronary heart disease
+  and followed them for a median of <span class="stat">27 years</span>. An Lp(a)-associated proteomic
+  signature derived by LASSO regression was independently associated with incident coronary artery
+  calcification (standardized &beta;=0.40, P&lt;0.0001) and hs-CRP (&beta;=0.11, P=0.00015) after adjustment
+  for Lp(a) concentration, whereas Lp(a) concentration itself did not retain significance in the same
+  models. The signature replicated in <span class="stat">37,996</span> UK Biobank participants. Pathway
+  enrichment implicated interleukin signaling, cell-surface interactions at the vascular wall, and fibrin
+  clot formation.</p></div></div><div class="res r3" id="r3"><div class="res-head"><h2>AI and machine learning for imaging and risk</h2><svg class="res-fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="200" height="130" role="img" aria-labelledby="t3-t3 t3-d3">
+<title id="t3-t3">Waveform to physiologic estimate</title>
+<desc id="t3-d3">Successive ECG complexes receding into the distance, passed through a model to yield an estimate of coronary flow reserve.</desc>
+<path class="ecg ecg-1" pathLength="100" d="M12.0 62.0 L15.4 62.0 Q19.0 58.6 22.5 62.0 L27.8 62.0 L28.9 63.3 L30.7 36.0 L32.8 69.0 L34.6 62.0 L41.5 62.0 C47.0 55.2 51.4 55.2 57.6 62.0 L74.0 62.0"
+      fill="none" stroke="currentColor" stroke-width="2.1"
+      stroke-linejoin="round" stroke-linecap="round"/>
+<path class="ecg ecg-2" pathLength="100" d="M74.0 62.0 L77.4 62.0 Q81.0 58.6 84.5 62.0 L89.8 62.0 L90.9 63.3 L92.7 36.0 L94.8 69.0 L96.6 62.0 L103.5 62.0 C109.0 55.2 113.4 55.2 119.6 62.0 L136.0 62.0"
+      fill="none" stroke="currentColor" stroke-width="2.1"
+      stroke-linejoin="round" stroke-linecap="round" opacity=".40"/>
+<path class="ecg ecg-3" pathLength="100" d="M136.0 62.0 L138.2 62.0 Q140.5 59.6 142.8 62.0 L146.2 62.0 L146.9 62.9 L148.1 43.3 L149.4 67.1 L150.6 62.0 L155.0 62.0 C158.6 57.1 161.4 57.1 165.4 62.0 L176.0 62.0"
+      fill="none" stroke="currentColor" stroke-width="2.1"
+      stroke-linejoin="round" stroke-linecap="round" opacity=".15"/>
+<line class="ai-link" x1="150" y1="96" x2="172" y2="96" stroke="var(--ai-node,#6B5B7B)" stroke-width="1.5" stroke-dasharray="3.5 3.5"/>
+<circle class="ai-node ai-node-a" cx="182" cy="80" r="4" fill="var(--ai-node,#6B5B7B)" opacity=".3"/>
+<circle class="ai-node ai-node-b" cx="182" cy="96" r="5.5" fill="var(--ai-node,#6B5B7B)"/>
+<circle class="ai-node ai-node-c" cx="182" cy="112" r="4" fill="var(--ai-node,#6B5B7B)" opacity=".3"/>
+</svg></div><div><p class="lede">The cardiac tests with the greatest diagnostic utility are also the least accessible. We develop machine learning methods that extend quantitative capability to widely available modalities.</p><p>Chest pain accounts for roughly <span class="stat">8 million</span> emergency department visits and
+  <span class="stat">6 million</span> outpatient visits annually in the United States. Quantitative PET
+  myocardial perfusion imaging provides accurate assessment of myocardial flow reserve and coronary
+  microvascular dysfunction, but is expensive and unevenly distributed. The limiting factor for training
+  AI models on these endpoints is the scarcity of high-quality labels, since labels derive from the same
+  scarce tests.</p><p>We addressed this with a self-supervised foundation model. A modified vision transformer was
+  pretrained on <span class="stat">800,035</span> unlabeled ECG waveforms from MIMIC-IV-ECG, then
+  fine-tuned on smaller labeled datasets derived from PET (N=3,126) and clinical reports (N=13,704)
+  across <span class="stat">12</span> prediction tasks spanning myocardial perfusion, ventricular
+  function, and rhythm. Self-supervised pretraining improved diagnostic accuracy in
+  <span class="stat">11 of 12</span> tasks relative to de novo supervised training, with AUROC ranging
+  from 0.763 for impaired flow reserve to 0.955 for reduced ejection fraction. Performance was retained
+  across five independent databases, including UK Biobank and PTB-XL. Label efficiency improved
+  substantially: the pretrained model matched the peak performance of the de novo model using
+  <span class="stat">10%</span> of available training data for the flow reserve task.</p><p>A parallel effort addresses attenuation correction in SPECT. Approximately
+  <span class="stat">75%</span> of SPECT myocardial perfusion imaging worldwide is performed without CT
+  attenuation correction. We trained a convolutional network on <span class="stat">11,532</span> paired
+  studies to generate attenuation-corrected polar maps from non-corrected data. Correlation with
+  CT-corrected reference improved from R&sup2;=0.68 to <span class="stat">0.85</span>, and specificity for
+  obstructive disease improved by <span class="stat">18.9%</span> at 88% sensitivity, without additional
+  imaging or radiation exposure.</p></div></div>
+</div></section>
+<footer><div class="wrap">
+<span>Murthy Lab &middot; Division of Cardiovascular Medicine &middot; University of Michigan</span>
+</div></footer>
+<script>
+/* Flow-reserve field.
+   A lattice of vessels. Most sit below the threshold of detection; a subset
+   resolve. Literal to the science: signal that standard tools cannot see. */
+(function () {
+  var c = document.getElementById('field');
+  if (!c) return;
+  var ctx = c.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pts = [], raf = null, t0 = null;
+
+  function build() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = c.clientWidth, h = c.clientHeight;
+    c.width = w * dpr; c.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    pts = [];
+    var gap = w < 640 ? 26 : 34;
+    var cols = Math.ceil(w / gap), rows = Math.ceil(h / gap);
+    for (var i = 0; i <= cols; i++) {
+      for (var j = 0; j <= rows; j++) {
+        // radial falloff from a focus point, jittered — perfusion-like
+        var x = i * gap + (((i * 7 + j * 13) % 11) - 5) * 1.1;
+        var y = j * gap + (((i * 11 + j * 5) % 9) - 4) * 1.1;
+        var dx = (x - w * 0.30) / (w * 0.62);
+        var dy = (y - h * 0.52) / (h * 0.92);
+        var d = Math.sqrt(dx * dx + dy * dy);
+        var reserve = Math.max(0, 1 - d * 0.92) + (((i * 31 + j * 17) % 100) / 100 - 0.5) * 0.34;
+        pts.push({
+          x: x, y: y,
+          r: reserve,                       // "flow reserve" 0..1
+          delay: 220 + d * 900 + ((i * 3 + j * 7) % 13) * 45
+        });
+      }
+    }
+  }
+
+  function draw(ts) {
+    if (t0 === null) t0 = ts;
+    var el = ts - t0;
+    var w = c.clientWidth, h = c.clientHeight;
+    ctx.clearRect(0, 0, w, h);
+
+    for (var k = 0; k < pts.length; k++) {
+      var p = pts[k];
+      var prog = reduce ? 1 : Math.min(1, Math.max(0, (el - p.delay) / 850));
+      if (prog <= 0) continue;
+      var ease = 1 - Math.pow(1 - prog, 3);
+
+      // below-threshold points stay faint; above-threshold resolve to amber
+      var above = p.r > 0.52;
+      var a = above ? (0.10 + p.r * 0.62) * ease : (0.05 + p.r * 0.13) * ease;
+      var rad = above ? 1.0 + p.r * 2.0 : 0.85;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, rad * (0.55 + 0.45 * ease), 0, 6.2832);
+      ctx.fillStyle = above
+        ? 'rgba(200,127,50,' + a.toFixed(3) + ')'
+        : 'rgba(190,200,212,' + a.toFixed(3) + ')';
+      ctx.fill();
+    }
+
+    if (!reduce && el < 4200) raf = requestAnimationFrame(draw);
+  }
+
+  function start() {
+    if (raf) cancelAnimationFrame(raf);
+    t0 = null; build();
+    raf = requestAnimationFrame(draw);
+  }
+
+  var rz;
+  window.addEventListener('resize', function () {
+    clearTimeout(rz); rz = setTimeout(start, 180);
+  });
+  start();
+})();
+
+</script>
+<script>
+/* Play each theme figure once, when it first scrolls into view.
+   The figures are inert without this: main.css only hides parts of a figure
+   that carries .armed, and .armed is added here. If this script fails to load
+   or IntersectionObserver is missing, every figure renders complete. */
+(function () {
+  var figs = document.querySelectorAll('svg.res-fig');
+  if (!figs.length) return;
+
+  // Arm the figures from script, never from the markup: if this file fails to
+  // load, nothing is hidden and every figure renders complete.
+  function arm() { figs.forEach(function (f) { f.classList.add('armed'); }); }
+
+  // Anyone who has asked for reduced motion sees the finished state, no
+  // observer, no animation.
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (still && still.matches) return;          // leave them unarmed = complete
+  if (!('IntersectionObserver' in window)) return;
+
+  arm();
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);   // once only
+    });
+  }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
+
+  figs.forEach(function (f) { io.observe(f); });
+})();
+
+</script>
+</body></html>
