@@ -1,0 +1,78 @@
+<!doctype html><meta charset="utf-8">
+<title>Colour mockups &middot; Murthy Lab</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;background:#F7F6F3;color:#171B21}
+.wrap{max-width:900px;margin:0 auto;padding:3rem 2rem}
+h1{font-size:1.5rem;margin:0 0 .4rem;letter-spacing:-.02em}
+.sub{color:#6B7280;margin:0 0 2rem;font-size:.95rem;max-width:64ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.1rem}
+a.card{display:block;text-decoration:none;color:inherit;border:1px solid #DEDAD2;
+  border-radius:10px;overflow:hidden;background:#fff}
+a.card:hover{border-color:#9AA3AE}
+.sw{height:70px;display:flex}.sw i{flex:1}
+.card h2{font-size:.98rem;margin:.9rem 1rem .3rem;font-weight:600}
+.card p{font-size:.82rem;color:#6B7280;margin:0 1rem 1.1rem;line-height:1.45}
+.note{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #DEDAD2;
+  font-size:.87rem;color:#6B7280;max-width:66ch}
+.note strong{color:#171B21}
+.banner{background:#FFF4D6;border:1px solid #E5D08A;border-radius:8px;
+  padding:.7rem 1rem;font-size:.88rem;margin:0 0 2rem;color:#5A4A17}
+.banner a{color:#5A4A17}
+code{font:.85em ui-monospace,monospace;background:#EFECE5;padding:.1em .35em;border-radius:3px}
+</style>
+<div class="wrap">
+<p class="banner">Mockups for review &mdash; not the live site.
+<a href="/">Go to murthylab.org</a></p>
+<h1>Ground options</h1>
+<p class="sub">Each link opens the full home page. Content and layout are identical; only the ground and the accent values change. A&ndash;E are whole-page dark; F keeps the light theme and simply warms the white.</p>
+
+<div class="grid">
+<a class="card" href="a-umblue.html"><div class="sw">
+<i style="background:#00274C"></i><i style="background:#003862"></i><i style="background:#FFCB05"></i>
+<i style="background:#8CC5D3"></i><i style="background:#B4A6C4"></i></div>
+<h2>A — U-M blue</h2><p>Institutional blue throughout, maize as the hero accent.</p></a>
+
+<a class="card" href="b-navy.html"><div class="sw">
+<i style="background:#0B1220"></i><i style="background:#131C2E"></i><i style="background:#D89550"></i>
+<i style="background:#77B6C6"></i><i style="background:#A292B4"></i></div>
+<h2>B — Deep navy</h2><p>Cooler, further from the university palette.</p></a>
+
+<a class="card" href="c-nearblack.html"><div class="sw">
+<i style="background:#12161C"></i><i style="background:#1A1F27"></i><i style="background:#D89550"></i>
+<i style="background:#77B6C6"></i><i style="background:#A292B4"></i></div>
+<h2>C — Near-black</h2><p>Your current hero ground, extended to everything.</p></a>
+
+<a class="card" href="d-charcoal.html"><div class="sw">
+<i style="background:#1A1712"></i><i style="background:#231F18"></i><i style="background:#E0A968"></i>
+<i style="background:#8CC5D3"></i><i style="background:#B4A6C4"></i></div>
+<h2>D — Warm charcoal</h2><p>A warm dark; the amber belongs here.</p></a>
+
+<a class="card" href="e-slate.html"><div class="sw">
+<i style="background:#161B22"></i><i style="background:#1E242D"></i><i style="background:#D89550"></i>
+<i style="background:#77B6C6"></i><i style="background:#A292B4"></i></div>
+<h2>E — Slate</h2><p>Blue-grey, the familiar technical-site dark.</p></a>
+
+<a class="card" href="f-warm.html"><div class="sw">
+<i style="background:#F1EEE7"></i><i style="background:#E7E2D7"></i><i style="background:#00274C"></i>
+<i style="background:#8F6410"></i><i style="background:#3A7482"></i></div>
+<h2>F — Warm ground (light)</h2><p>Not dark: the current theme with the white areas taking the band tone.</p></a>
+</div>
+
+<div class="note">
+<p><strong>The accents had to change.</strong> The current amber
+<code>#8F6410</code>, cyan <code>#3A7482</code> and violet <code>#6B5B7B</code>
+were darkened to clear WCAG AA against white. On a dark ground they score
+3.45, 3.46 and 2.94 — all failing. Every variant here uses lightened values
+that clear 5:1 or better on its own ground.</p>
+<p><strong>What to look at.</strong> The publications page is the real test:
+313 entries of small text is where a dark ground either reads comfortably or
+becomes tiring. These previews only show the home page, so if one appeals I
+would build it out across all pages before you decide.</p>
+<p><strong>A caution.</strong> Dark backgrounds suit interfaces better than
+they suit long-form reading. Your publications and research sections are
+substantial bodies of text, and light-on-dark is measurably slower to read for
+most people. Worth weighing against whatever is prompting the complaints.</p>
+</div>
+</div>
