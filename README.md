@@ -50,7 +50,7 @@ Settings → Pages.
     amber   #D89550   coronary vasomotor and microvascular
     cyan    #77B6C6   multiomics
     violet  #A292B4   AI / ML
-    ground  #0B1220   page background; panels step up to #131C2E
+    ground  #161B22   page background; panels step up to #1E242D
 
 Each theme's color appears on its card, its section statistics, and its dot in
 the publications list. The logo carries all three.

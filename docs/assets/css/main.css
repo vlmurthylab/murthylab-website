@@ -1,12 +1,12 @@
 /* ============ tokens ============ */
-/* Ground is #0B1220 (deep navy). --paper and --ground are the same value:
-   the page is a single dark field, with panels stepping up to #131C2E.
+/* Ground is #161B22 (slate). --paper and --ground are the same value:
+   the page is a single dark field, with panels stepping up to #1E242D.
    Accents are the lightened set — the darkened light-theme values
    (#8F6410, #3A7482, #6B5B7B) score under 3.5:1 here and must not come back. */
 :root{
-  --ground:#0B1220; --paper:#0B1220; --ink:#EDF0F5; --ink-soft:#AEB9CB;
-  --rule:#243149;
-  --panel:#131C2E;      /* cards, r2 band, avatars */
+  --ground:#161B22; --paper:#161B22; --ink:#EFF1F4; --ink-soft:#A6AEBA;
+  --rule:#2D343E;
+  --panel:#1E242D;      /* cards, r2 band, avatars */
   --amber:#D89550;      /* perfusion   */
   --mark-amber:#D89550; --mark-cyan:#77B6C6; --mark-violet:#A292B4;
   --cyan:#77B6C6;       /* multiomics  */
@@ -30,7 +30,7 @@ a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
 
 /* ============ nav ============ */
-.nav{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.93);
+.nav{position:sticky;top:0;z-index:50;background:rgba(22,27,34,.93);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
 .nav .wrap{display:flex;align-items:baseline;gap:2.4rem;height:68px}
 .brand{font-family:var(--display);text-decoration:none;margin-right:auto;
