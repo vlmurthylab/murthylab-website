@@ -57,5 +57,4 @@ the publications list. The logo carries all three.
 
 ## Not yet built
 
-- Join Us (postings pending approval)
 - Contact
