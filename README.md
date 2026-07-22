@@ -47,9 +47,10 @@ Settings → Pages.
 
 ## Theme colors
 
-    amber   #C87F32   coronary vasomotor and microvascular
-    cyan    #3E7C8C   multiomics
-    violet  #6B5B7B   AI / ML
+    amber   #D89550   coronary vasomotor and microvascular
+    cyan    #77B6C6   multiomics
+    violet  #A292B4   AI / ML
+    ground  #0B1220   page background; panels step up to #131C2E
 
 Each theme's color appears on its card, its section statistics, and its dot in
 the publications list. The logo carries all three.

@@ -1,11 +1,16 @@
 /* ============ tokens ============ */
+/* Ground is #0B1220 (deep navy). --paper and --ground are the same value:
+   the page is a single dark field, with panels stepping up to #131C2E.
+   Accents are the lightened set — the darkened light-theme values
+   (#8F6410, #3A7482, #6B5B7B) score under 3.5:1 here and must not come back. */
 :root{
-  --ground:#00274C; --paper:#F7F6F3; --ink:#171B21; --ink-soft:#4A525C;
-  --rule:#DEDAD2;
-  --amber:#8F6410;      /* perfusion   */
-  --mark-amber:#C87F32; --mark-cyan:#3E7C8C; --mark-violet:#6B5B7B;
-  --cyan:#3A7482;       /* multiomics  */
-  --violet:#6B5B7B;     /* ai/ml       */
+  --ground:#0B1220; --paper:#0B1220; --ink:#EDF0F5; --ink-soft:#AEB9CB;
+  --rule:#243149;
+  --panel:#131C2E;      /* cards, r2 band, avatars */
+  --amber:#D89550;      /* perfusion   */
+  --mark-amber:#D89550; --mark-cyan:#77B6C6; --mark-violet:#A292B4;
+  --cyan:#77B6C6;       /* multiomics  */
+  --violet:#A292B4;     /* ai/ml       */
   --measure:64ch;
   --step--1:clamp(.78rem,.74rem + .18vw,.86rem);
   --step-0:clamp(1rem,.96rem + .2vw,1.08rem);
@@ -25,7 +30,7 @@ a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
 
 /* ============ nav ============ */
-.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.93);
+.nav{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.93);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
 .nav .wrap{display:flex;align-items:baseline;gap:2.4rem;height:68px}
 .brand{font-family:var(--display);text-decoration:none;margin-right:auto;
@@ -35,17 +40,19 @@ a{color:inherit}
 .brand-inst{font-weight:400;font-size:.72rem;letter-spacing:.02em;color:var(--ink-soft);
   padding-left:.6rem;border-left:1px solid var(--rule);align-self:center}
 .nav a.lnk{font-family:var(--display);font-size:var(--step-0);font-weight:500;
-  letter-spacing:-.005em;text-decoration:none;color:#343B44;padding:.25rem 0;
+  letter-spacing:-.005em;text-decoration:none;color:var(--ink-soft);padding:.25rem 0;
   border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
 .nav a.lnk:hover,.nav a.lnk[aria-current]{color:var(--ink);border-bottom-color:var(--amber)}
 
 /* ============ hero ============ */
-.hero{background:var(--ground);color:var(--paper);position:relative;overflow:hidden;
+/* colour is --ink, not --paper: --paper equals --ground on a dark theme, so
+   inheriting it would paint the h1 in its own background colour. */
+.hero{background:var(--ground);color:var(--ink);position:relative;overflow:hidden;
   padding:clamp(4rem,11vh,8rem) 0 clamp(3.5rem,8vh,6rem)}
 .hero .wrap{position:relative;z-index:2}
 .hero h1{font-family:var(--display);font-weight:600;font-size:var(--step-3);
   line-height:1.04;letter-spacing:-.035em;margin:0 0 1.3rem;max-width:19ch}
-.hero p.dek{max-width:56ch;color:#C6D2E0;font-size:var(--step-1);line-height:1.5;margin:0}
+.hero p.dek{max-width:56ch;color:var(--ink-soft);font-size:var(--step-1);line-height:1.5;margin:0}
 .eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
   text-transform:uppercase;color:var(--amber);margin:0 0 1.6rem}
 #field{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.9}
@@ -54,9 +61,9 @@ a{color:inherit}
 .themes{padding:clamp(3.5rem,9vh,6rem) 0}
 .tgrid{display:grid;gap:1px;background:var(--rule);
   grid-template-columns:repeat(auto-fit,minmax(258px,1fr));border:1px solid var(--rule)}
-.tcard{background:var(--paper);padding:1.9rem 1.6rem 2.1rem;text-decoration:none;
+.tcard{background:var(--panel);padding:1.9rem 1.6rem 2.1rem;text-decoration:none;
   display:block;transition:background .18s}
-.tcard:hover{background:#FCFBF9}
+.tcard:hover{background:var(--rule)}
 .tcard .mk{width:26px;height:3px;display:block;margin-bottom:1.1rem}
 .tcard h3{font-family:var(--display);font-weight:600;font-size:var(--step-1);
   letter-spacing:-.02em;line-height:1.18;margin:0 0 .55rem}
@@ -74,16 +81,16 @@ a{color:inherit}
   letter-spacing:-.028em;line-height:1.1;margin:0}
 .res .lede{font-size:var(--step-1);line-height:1.45;margin:0 0 1.4rem;
   max-width:var(--measure);letter-spacing:-.01em}
-.res p{max-width:var(--measure);margin:0 0 1.05rem;color:#2B313A}
+.res p{max-width:var(--measure);margin:0 0 1.05rem;color:var(--ink-soft)}
 .res p:last-child{margin-bottom:0}
 .stat{font-family:var(--mono);font-size:.94em;font-variant-numeric:tabular-nums;
   border-bottom:1px solid currentColor;padding-bottom:.5px}
-.r1 .stat{color:#94591A} .r2 .stat{color:#2F6273} .r3 .stat{color:#584A66}
+.r1 .stat{color:var(--amber)} .r2 .stat{color:var(--cyan)} .r3 .stat{color:var(--violet)}
 
 /* ============ people ============ */
 .plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:1.6rem 1.4rem}
 .p{display:flex;gap:.85rem;align-items:center}
-.av{width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:#EAE6DE;
+.av{width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:var(--panel);
   display:grid;place-items:center;font-family:var(--mono);font-size:.72rem;
   color:var(--ink-soft);letter-spacing:.02em;overflow:hidden}
 .av img{width:100%;height:100%;object-fit:cover}
@@ -104,10 +111,10 @@ a{color:inherit}
 .profile-links a{font-family:var(--display);font-size:.78rem;color:var(--ink-soft);
   text-decoration:none;border:1px solid var(--rule);border-radius:2px;
   padding:.24rem .6rem;transition:border-color .15s,color .15s}
-.profile-links a:hover{color:var(--ink);border-color:#C4BEB2}
+.profile-links a:hover{color:var(--ink);border-color:var(--ink-soft)}
 .sub{font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;
   color:var(--ink-soft);margin:2.4rem 0 1.3rem}
-.alumni{max-width:var(--measure);margin:0;color:#2B313A}
+.alumni{max-width:var(--measure);margin:0;color:var(--ink-soft)}
 
 /* ============ publications ============ */
 .pub-profiles{font-family:var(--display);font-size:var(--step--1);color:var(--ink-soft);
@@ -117,13 +124,13 @@ a{color:inherit}
 .fb{font-family:var(--display);font-size:var(--step--1);background:none;cursor:pointer;
   border:1px solid var(--rule);padding:.4rem .85rem;border-radius:2px;color:var(--ink-soft);
   transition:all .15s}
-.fb:hover{border-color:#C4BEB2}
-.fb[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fb:hover{border-color:var(--ink-soft)}
+.fb[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
 .fb .n{font-family:var(--mono);font-size:.72em;opacity:.65;margin-left:.4rem}
 .count{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin:0 0 1.6rem}
 .yr{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--ink-soft);
   padding-top:1.5rem;border-top:1px solid var(--rule);margin-top:1.5rem}
-.pub{padding:.85rem 0;border-bottom:1px solid #EDEAE4}
+.pub{padding:.85rem 0;border-bottom:1px solid var(--rule)}
 .pub .ti{display:block;font-size:.97rem;line-height:1.45;margin-bottom:.22rem;
   text-decoration:none;border-bottom:1px solid transparent}
 .pub a.ti:hover{border-bottom-color:var(--amber)}
@@ -134,10 +141,10 @@ a{color:inherit}
 .d-vasomotor{background:var(--amber)} .d-multiomics{background:var(--cyan)} .d-ai{background:var(--violet)}
 
 /* ============ footer ============ */
-footer{background:var(--ground);color:#8A9199;padding:2.6rem 0;
-  font-family:var(--display);font-size:var(--step--1)}
+footer{background:var(--ground);color:var(--ink-soft);padding:2.6rem 0;
+  font-family:var(--display);font-size:var(--step--1);border-top:1px solid var(--rule)}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-footer a{color:#B9C0C7}
+footer a{color:var(--ink)}
 
 @media(max-width:720px){
   .res{grid-template-columns:1fr}
@@ -153,24 +160,17 @@ footer a{color:#B9C0C7}
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
 
-/* --- U-M palette -------------------------------------------------- */
+/* --- section band -------------------------------------------------- */
 
-/* Second research section on a warm band. Painted with box-shadow rather
+/* Second research section on a raised band. Painted with box-shadow rather
    than a pseudo-element: body carries background:var(--paper), so a
    z-index:-1 element would paint behind it and disappear in Firefox. */
 .res{padding-block:clamp(2.4rem,5vh,3.6rem);margin-bottom:0}
-.res.r2{background:#F1EEE7;
-        box-shadow:0 0 0 100vmax #F1EEE7;
+.res.r2{background:var(--panel);
+        box-shadow:0 0 0 100vmax var(--panel);
         clip-path:inset(0 -100vmax)}
 .sec{padding-bottom:0}
 @media (max-width:900px){.res{padding-block:2.2rem}}
-
-/* Maize only ever on the blue ground - 9.9:1 there, 1.4:1 on white. */
-.hero .stat{color:#FFCB05}
-.site-footer a{color:#FFCB05}
-
-/* Section eyebrows in blue rather than grey. */
-.sec-h{color:#00274C;border-bottom-color:#00274C}
 
 /* --- theme graphics ------------------------------------------------ */
 /* .res is a two-column grid; .res-head holds the heading and its figure
@@ -189,12 +189,12 @@ footer a{color:#B9C0C7}
 
 /* ============ join us ============ */
 .join-lede{max-width:var(--measure);margin:0 0 1.2rem}
-.join-intro{max-width:var(--measure);margin:0 0 .4rem;color:#2B313A}
+.join-intro{max-width:var(--measure);margin:0 0 .4rem;color:var(--ink-soft)}
 .jlist{display:grid;gap:1.6rem}
 .j h3{font-family:var(--display);font-weight:600;font-size:var(--step-1);
   letter-spacing:-.018em;line-height:1.25;margin:0 0 .4rem}
-.j p{max-width:var(--measure);margin:0;color:#2B313A}
-.join-apply{max-width:var(--measure);margin:0;color:#2B313A}
+.j p{max-width:var(--measure);margin:0;color:var(--ink-soft)}
+.join-apply{max-width:var(--measure);margin:0;color:var(--ink-soft)}
 
 
 /* ============ section rhythm ============ */
