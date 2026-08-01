@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
-Disallow: /test/
+
+# /test/ is deliberately not disallowed here. Every page under it carries
+# <meta name="robots" content="noindex,nofollow">, and a crawler has to be
+# able to fetch a page to see that tag. Blocking the path instead would hide
+# the noindex, leaving the URLs eligible for indexing if anything links to
+# them. Crawl-and-obey-noindex is the stronger guarantee.
 
 Sitemap: https://murthylab.org/sitemap.xml
