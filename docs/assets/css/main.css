@@ -195,6 +195,8 @@ footer a{color:var(--ink)}
 .j h3{font-family:var(--display);font-weight:600;font-size:var(--step-1);
   letter-spacing:-.018em;line-height:1.25;margin:0 0 .4rem}
 .j p{max-width:var(--measure);margin:0;color:var(--ink-soft)}
+.j h3 a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.j h3 a:hover,.j h3 a:focus-visible{border-bottom-color:var(--amber)}
 .join-apply{max-width:var(--measure);margin:0;color:var(--ink-soft)}
 
 
