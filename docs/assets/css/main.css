@@ -199,6 +199,13 @@ footer a{color:var(--ink)}
 .j h3 a:hover,.j h3 a:focus-visible{border-bottom-color:var(--amber)}
 .join-apply{max-width:var(--measure);margin:0;color:var(--ink-soft)}
 
+/* ============ contact ============ */
+/* One heading level: each .sub label is followed directly by a paragraph.
+   No .j wrappers here — those exist to give a job listing its own title,
+   and every section on this page has exactly one block. */
+.contact-lede{max-width:var(--measure);margin:0 0 1.2rem}
+.contact-block{max-width:var(--measure);margin:0;color:var(--ink-soft)}
+
 
 /* ============ section rhythm ============ */
 /* .sec has symmetric padding, but the last child of a section is normally a

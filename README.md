@@ -7,6 +7,8 @@ step and no framework.
       index.html         home: tagline, three theme cards, research sections
       people.html        PI bio, profile links, lab members, collaborators
       publications.html  all publications, filterable by theme
+      join.html          open positions, linked to the U-M careers postings
+      contact.html       routing page: research, trainees, patient care, address
       assets/css/        design tokens and styling
       assets/js/         hero canvas animation
       assets/img/        logo variants — see assets/img/README.md
@@ -19,8 +21,15 @@ step and no framework.
 
 ## Editing content
 
-Home and people pages are hand-edited HTML. Open the file, change the text,
-commit.
+Home, people, join, and contact pages are hand-edited HTML. Open the file,
+change the text, commit.
+
+The top nav is duplicated in every page's `<head>`-adjacent `<nav>` block, and
+`publications.html` gets its copy from the template inside
+`tools/build_pubs.py`. Adding or renaming a nav item means editing all the
+hand-written pages *and* that template, or the next regeneration will silently
+drop the change from the publications page. Note that `404.html` uses absolute
+paths (`/people.html`) because it can be served from any URL depth.
 
 ## Updating publications
 
@@ -57,4 +66,5 @@ the publications list. The logo carries all three.
 
 ## Not yet built
 
-- Contact
+- Application form for the Join Us page (intended: a U-M Qualtrics or Google
+  form, linked rather than embedded, so the site stays static)
