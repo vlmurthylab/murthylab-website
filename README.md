@@ -31,6 +31,34 @@ hand-written pages *and* that template, or the next regeneration will silently
 drop the change from the publications page. Note that `404.html` uses absolute
 paths (`/people.html`) because it can be served from any URL depth.
 
+Internal links point at `/`, not `index.html`. Both work, but `index.html`
+canonicalises to `/`, so linking to it sends search engines to the URL the site
+itself declares non-canonical.
+
+## Structured data
+
+`index.html` carries a JSON-LD `@graph` describing the lab (`#lab`), the PI
+(`#murthy`), and the site (`#website`). `people.html` carries a `ProfilePage`
+whose `mainEntity` is the same `#murthy` person, written out in full.
+
+Two things to keep straight:
+
+- **One `@id` per entity.** The Person appears on both pages and must keep the
+  identical `@id`; that is what says "same person" rather than "two people."
+  Never give the PI a second `@id`. Equally, a bare `{"@id": ...}` reference
+  only resolves *within one document* — Google will not follow it across pages,
+  so anything referenced from another file must be written out with its
+  `@type` and `name`.
+- **`dateModified` on `people.html` is hand-maintained and will go stale.**
+  It should carry the timestamp of the last human edit to the PI's titles or
+  bio, as a full ISO 8601 datetime with a timezone offset
+  (`2026-08-01T17:37:49+00:00`) — a date alone is rejected as invalid. **When
+  you change the titles or bio on that page, update this value in the same
+  commit.** Nothing enforces it.
+
+After changing any of this, check the affected page in Google's Rich Results
+Test, and watch Search Console for a week or so — errors surface there on a lag.
+
 ## Updating publications
 
 Publications come from Zotero via Better BibTeX, not from hand-editing.
