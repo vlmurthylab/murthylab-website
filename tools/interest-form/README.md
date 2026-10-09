@@ -1,8 +1,18 @@
 # Expression-of-interest form
 
 A form for people who want to be considered for roles that are not currently
-posted. It collects a CV, free-text research experience, and checkboxes for
-specific skills (R, Python, SQL, AI/ML libraries, and so on).
+posted. It collects a CV and free-text research experience, then asks about
+skills on one of two tracks, chosen by the applicant:
+
+- **Data and computation** — a novice-to-expert grid for R, Python, SQL,
+  Git/GitHub, the Unix command line and deep learning frameworks, then
+  checkboxes for AI/ML libraries, infrastructure, methods and data types.
+- **Sample collection and clinical research** — the same novice-to-expert
+  grid for consent, study visits, phlebotomy, biospecimen processing, REDCap
+  and IRB work, then checkboxes for lab, biobanking and shipping experience
+  and certifications.
+
+Applicants who pick "Both" see both sections.
 
 The site is static (GitHub Pages), so it cannot receive form submissions or
 file uploads itself. The form lives in **U-M Qualtrics** and the Join Us page
@@ -25,28 +35,34 @@ Why Qualtrics rather than the alternatives:
    CV or resume below" text, add a question of type **File Upload**. Restrict
    it to PDF, DOC and DOCX, and make it required.
 3. Mark as required (*Response requirements → Force response*): name, email,
-   current position, degree, roles, research experience, onsite, the CV upload,
-   and the confirmation box.
+   current position, degree, track, position type, research experience,
+   onsite, both proficiency grids, the CV upload, and the confirmation box.
 4. On the email question, add validation → *Email address*.
-5. On "If other, please describe" (under roles), add display logic so it only
-   shows when *Other* is selected.
-6. Survey options:
+5. On "If other, please describe" (under position type), add display logic
+   so it only shows when *Other* is selected.
+6. **Route each applicant to their track.** Open *Survey flow* and, before
+   the **Data skills** block, add a *Branch*: show it if the track question is
+   "Data and computation…" *or* "Both". Put the **Sample collection skills**
+   block under a second branch: "Sample collection…" *or* "Both". The other
+   blocks stay outside any branch. (The import file cannot express this, so
+   until it is done every applicant sees both sections.)
+7. Survey options:
    - *Security → Prevent multiple submissions*: off (people may legitimately
      resubmit an updated CV).
    - *Responses → Anonymize responses*: off — you need the contact details.
    - *Survey termination*: a custom end-of-survey message, e.g. "Thank you.
      We read every submission and will be in touch if a suitable role opens."
-7. *Workflows → Email task*: send a notification to the lab inbox on each
+8. *Workflows → Email task*: send a notification to the lab inbox on each
    submission, so nothing sits unread.
-8. Under *Look and feel*, choose a U-M theme if available.
-9. Publish, then copy the anonymous link (it looks like
+9. Under *Look and feel*, choose a U-M theme if available.
+10. Publish, then copy the anonymous link (it looks like
    `https://umich.qualtrics.com/jfe/form/SV_xxxxxxxxxxxxxxx`).
 
 ## Linking it from the site
 
 `docs/join.html` has an "Expressing interest" section whose link is the
 placeholder `QUALTRICS_FORM_URL`. Replace it with the anonymous link from
-step 9 before that change is merged to `main`; until then the section must not
+step 10 before that change is merged to `main`; until then the section must not
 go live. `docs/contact.html` points readers to the Join Us page, so it needs no
 link of its own.
 
