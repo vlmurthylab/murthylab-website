@@ -56,28 +56,32 @@ LinkedIn, GitHub, Google Scholar, or personal website (optional)
 
 [[Block:Interest]]
 
-[[Question:MC:MultipleAnswer:Vertical]]
-[[ID:roles]]
-Which kinds of roles interest you? Select all that apply.
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:track]]
+Our work divides into two broad areas. Which interests you?
 [[Choices]]
+Data and computation: data science, machine learning, data management, biostatistics
+Sample collection and clinical research: participant recruitment, study visits, biospecimen collection and processing, regulatory work
+Both
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:stage]]
+What kind of position are you looking for?
+[[Choices]]
+Staff position
 Postdoctoral fellowship
-Data science / machine learning
-Data management or data engineering
-Biostatistics / epidemiology
-Clinical research coordination
-Laboratory / biospecimen research
-Medical student or resident research
 Graduate student research
+Medical student or resident research
 Undergraduate research
 Other
 
 [[Question:TE:SingleLine]]
-[[ID:roles_other]]
+[[ID:stage_other]]
 If other, please describe
 
 [[Question:MC:SingleAnswer:Vertical]]
 [[ID:availability]]
-What kind of position are you looking for?
+Time commitment
 [[Choices]]
 Full-time
 Part-time
@@ -119,39 +123,39 @@ What draws you to this lab's work, and what would you hope to learn or do here?
 
 [[PageBreak]]
 
-[[Block:Technical skills]]
+[[Block:Data skills]]
 
 [[Question:DB]]
-[[ID:skills_intro]]
-Check anything you have used in real work (a project, thesis, job, or publication), not only in coursework. Leave boxes unchecked if unsure; we will ask about specifics in conversation.
+[[ID:data_intro]]
+<strong>Data and computation skills.</strong> Check anything you have used in real work (a project, thesis, job, or publication), not only in coursework. Leave boxes unchecked if unsure; we will ask about specifics in conversation.
 
-[[Question:MC:MultipleAnswer:Vertical]]
-[[ID:lang]]
-Programming languages
+[[Question:Matrix]]
+[[ID:data_level]]
+Rate your proficiency with each of these.
 [[Choices]]
 R
 Python
 SQL
-Bash / Unix shell
+Git / GitHub
+Unix command line
+Deep learning frameworks (PyTorch, TensorFlow, JAX)
+[[Answers]]
+Not used
+Novice: coursework or short scripts
+Intermediate: used regularly in a project
+Advanced: built pipelines or analyses others rely on
+Expert: wrote packages or production code, or teach it to others
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:lang]]
+Other programming languages
+[[Choices]]
 SAS
 Stata
 MATLAB
 Julia
 C / C++
 Java or Scala
-
-[[Question:Matrix]]
-[[ID:lang_level]]
-How would you rate your proficiency in the three we use most?
-[[Choices]]
-R
-Python
-SQL
-[[Answers]]
-None
-Basic (coursework, short scripts)
-Working (used regularly in a project)
-Advanced (built packages, pipelines, or production code)
 
 [[Question:MC:MultipleAnswer:Vertical]]
 [[ID:ai_libs]]
@@ -171,7 +175,6 @@ LLM APIs or frameworks (e.g. OpenAI, Anthropic, LangChain)
 [[ID:data_tools]]
 Data and computing infrastructure
 [[Choices]]
-Git / GitHub
 High-performance computing cluster (e.g. Slurm)
 Cloud computing (AWS, Google Cloud, Azure)
 Docker or other containers
@@ -195,7 +198,7 @@ Signal or time-series processing
 
 [[Question:MC:MultipleAnswer:Vertical]]
 [[ID:domain]]
-Data and domain experience
+Data types you have worked with
 [[Choices]]
 Proteomics (Olink, SomaScan, or mass spectrometry)
 Metabolomics
@@ -206,22 +209,64 @@ Electronic health record data (Epic, OMOP, PCORnet)
 Large cohorts or biobanks (UK Biobank, All of Us, MESA, Framingham, etc.)
 Claims or registry data
 
-[[Question:MC:MultipleAnswer:Vertical]]
-[[ID:clinical]]
-Clinical research and laboratory experience
+[[Question:TE:Essay]]
+[[ID:data_other]]
+Other data or computing experience we should know about (optional)
+
+[[PageBreak]]
+
+[[Block:Sample collection skills]]
+
+[[Question:DB]]
+[[ID:sample_intro]]
+<strong>Sample collection and clinical research skills.</strong> Check anything you have done in real work, not only in training. Leave boxes unchecked if unsure; we will ask about specifics in conversation.
+
+[[Question:Matrix]]
+[[ID:sample_level]]
+Rate your experience with each of these.
 [[Choices]]
-IRB submissions and regulatory management
 Participant recruitment and informed consent
+Study visits and data collection with participants
+Phlebotomy or other biospecimen collection
+Biospecimen processing (centrifugation, aliquoting)
 REDCap
-Human subjects training (e.g. CITI, PEERRS)
-Phlebotomy or biospecimen collection
-Biospecimen processing and biobanking (centrifugation, aliquoting, freezer inventory)
+IRB submissions and regulatory management
+[[Answers]]
+Not done
+Novice: trained or observed
+Intermediate: done independently on a study
+Advanced: responsible for it across a study
+Expert: trained others or set up the process
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:sample_exp]]
+Other experience
+[[Choices]]
+Biobanking and freezer inventory systems (e.g. FreezerPro, OpenSpecimen)
 Laboratory assays (ELISA, PCR, or similar)
+Shipping biological samples (IATA / dangerous goods)
 Standard operating procedure (SOP) writing
+Quality control and sample tracking
+Vendor or core facility coordination
+Clinical trial or multicenter study operations
+Electronic health record chart review
+Working in a hospital or clinic setting
+Spanish or another language used with participants
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:certs]]
+Current certifications or training
+[[Choices]]
+Human subjects research (CITI or PEERRS)
+Good Clinical Practice (GCP)
+Phlebotomy certification
+IATA / dangerous goods shipping
+Bloodborne pathogens
+Clinical research professional (ACRP or SOCRA)
 
 [[Question:TE:Essay]]
-[[ID:skills_other]]
-Other tools, methods, or experience we should know about (optional)
+[[ID:sample_other]]
+Other clinical or laboratory experience we should know about (optional)
 
 [[PageBreak]]
 
