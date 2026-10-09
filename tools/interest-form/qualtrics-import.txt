@@ -1,0 +1,294 @@
+[[AdvancedFormat]]
+
+[[Block:Introduction]]
+
+[[Question:DB]]
+[[ID:intro]]
+<strong>Murthy Lab &middot; Expression of interest</strong><br><br>
+Use this form if you would like to be considered for future roles in the Murthy Lab, Division of Cardiovascular Medicine, University of Michigan. It is not an application for a posted position: those must be submitted through the University of Michigan careers site linked from murthylab.org/join.html.<br><br>
+We read every submission, but we may not be able to reply to each one. We will contact you if a role opens that fits your background. The form takes about ten minutes; please have your CV or resume ready to upload as a PDF.
+
+[[PageBreak]]
+
+[[Block:About you]]
+
+[[Question:TE:SingleLine]]
+[[ID:name]]
+Full name
+
+[[Question:TE:SingleLine]]
+[[ID:email]]
+Email address
+
+[[Question:TE:SingleLine]]
+[[ID:phone]]
+Phone (optional)
+
+[[Question:TE:SingleLine]]
+[[ID:position]]
+Current position and institution or employer
+
+[[Question:MC:Dropdown]]
+[[ID:degree]]
+Highest degree completed or in progress
+[[Choices]]
+High school or equivalent
+Bachelor's (in progress)
+Bachelor's
+Master's (in progress)
+Master's
+PhD (in progress)
+PhD
+MD or DO (in progress)
+MD or DO
+MD/PhD
+Other doctoral degree
+
+[[Question:TE:SingleLine]]
+[[ID:field]]
+Field of study for that degree
+
+[[Question:TE:SingleLine]]
+[[ID:profile]]
+LinkedIn, GitHub, Google Scholar, or personal website (optional)
+
+[[PageBreak]]
+
+[[Block:Interest]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:track]]
+Our work divides into two broad areas. Which interests you?
+[[Choices]]
+Data and computation: data science, machine learning, data management, biostatistics
+Sample collection and clinical research: participant recruitment, study visits, biospecimen collection and processing, regulatory work
+Both
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:stage]]
+What kind of position are you looking for?
+[[Choices]]
+Staff position
+Postdoctoral fellowship
+Graduate student research
+Medical student or resident research
+Undergraduate research
+Other
+
+[[Question:TE:SingleLine]]
+[[ID:stage_other]]
+If other, please describe
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:availability]]
+Time commitment
+[[Choices]]
+Full-time
+Part-time
+Summer or other fixed term
+Flexible
+
+[[Question:TE:SingleLine]]
+[[ID:start]]
+Earliest date you could start (month and year)
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:onsite]]
+Our positions are onsite in Ann Arbor, Michigan. Are you able to work onsite?
+[[Choices]]
+Yes
+Yes, after relocating
+No
+Not sure
+
+[[PageBreak]]
+
+[[Block:Research experience]]
+
+[[Question:TE:Essay]]
+[[ID:research_exp]]
+Describe your prior research experience. For each project: the question, your specific role, the methods you used, and how long you worked on it.
+
+[[Question:TE:Essay]]
+[[ID:research_best]]
+Which piece of work are you proudest of, and what did you personally contribute to it?
+
+[[Question:TE:Essay]]
+[[ID:pubs]]
+Publications, preprints, abstracts, or presentations (optional). Citations or links are fine.
+
+[[Question:TE:Essay]]
+[[ID:why]]
+What draws you to this lab's work, and what would you hope to learn or do here?
+
+[[PageBreak]]
+
+[[Block:Data skills]]
+
+[[Question:DB]]
+[[ID:data_intro]]
+<strong>Data and computation skills.</strong> Check anything you have used in real work (a project, thesis, job, or publication), not only in coursework. Leave boxes unchecked if unsure; we will ask about specifics in conversation.
+
+[[Question:Matrix]]
+[[ID:data_level]]
+Rate your proficiency with each of these.
+[[Choices]]
+R
+Python
+SQL
+Git / GitHub
+Unix command line
+Deep learning frameworks (PyTorch, TensorFlow, JAX)
+[[Answers]]
+Not used
+Novice: coursework or short scripts
+Intermediate: used regularly in a project
+Advanced: built pipelines or analyses others rely on
+Expert: wrote packages or production code, or teach it to others
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:lang]]
+Other programming languages
+[[Choices]]
+SAS
+Stata
+MATLAB
+Julia
+C / C++
+Java or Scala
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:ai_libs]]
+AI and machine learning libraries
+[[Choices]]
+PyTorch
+TensorFlow / Keras
+JAX
+scikit-learn
+Hugging Face Transformers
+XGBoost / LightGBM
+PyTorch Lightning
+tidymodels or caret (R)
+LLM APIs or frameworks (e.g. OpenAI, Anthropic, LangChain)
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:data_tools]]
+Data and computing infrastructure
+[[Choices]]
+High-performance computing cluster (e.g. Slurm)
+Cloud computing (AWS, Google Cloud, Azure)
+Docker or other containers
+Spark, Dask, or Polars for large data
+Relational databases (PostgreSQL, MySQL, SQL Server)
+Workflow managers (Snakemake, Nextflow, Airflow)
+Data visualization (ggplot2, matplotlib, plotly)
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:methods]]
+Analytic methods
+[[Choices]]
+Regression modeling
+Survival / time-to-event analysis
+Causal inference
+Mendelian randomization or other genetic epidemiology
+Mixed-effects or longitudinal models
+Deep learning model training
+Self-supervised or foundation-model pretraining
+Signal or time-series processing
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:domain]]
+Data types you have worked with
+[[Choices]]
+Proteomics (Olink, SomaScan, or mass spectrometry)
+Metabolomics
+Genomics / GWAS
+Electrocardiogram (ECG) or other physiologic waveforms
+Medical imaging (PET, CT, MRI, echocardiography)
+Electronic health record data (Epic, OMOP, PCORnet)
+Large cohorts or biobanks (UK Biobank, All of Us, MESA, Framingham, etc.)
+Claims or registry data
+
+[[Question:TE:Essay]]
+[[ID:data_other]]
+Other data or computing experience we should know about (optional)
+
+[[PageBreak]]
+
+[[Block:Sample collection skills]]
+
+[[Question:DB]]
+[[ID:sample_intro]]
+<strong>Sample collection and clinical research skills.</strong> Check anything you have done in real work, not only in training. Leave boxes unchecked if unsure; we will ask about specifics in conversation.
+
+[[Question:Matrix]]
+[[ID:sample_level]]
+Rate your experience with each of these.
+[[Choices]]
+Participant recruitment and informed consent
+Study visits and data collection with participants
+Phlebotomy or other biospecimen collection
+Biospecimen processing (centrifugation, aliquoting)
+REDCap
+IRB submissions and regulatory management
+[[Answers]]
+Not done
+Novice: trained or observed
+Intermediate: done independently on a study
+Advanced: responsible for it across a study
+Expert: trained others or set up the process
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:sample_exp]]
+Other experience
+[[Choices]]
+Biobanking and freezer inventory systems (e.g. FreezerPro, OpenSpecimen)
+Laboratory assays (ELISA, PCR, or similar)
+Shipping biological samples (IATA / dangerous goods)
+Standard operating procedure (SOP) writing
+Quality control and sample tracking
+Vendor or core facility coordination
+Clinical trial or multicenter study operations
+Electronic health record chart review
+Working in a hospital or clinic setting
+Spanish or another language used with participants
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:certs]]
+Current certifications or training
+[[Choices]]
+Human subjects research (CITI or PEERRS)
+Good Clinical Practice (GCP)
+Phlebotomy certification
+IATA / dangerous goods shipping
+Bloodborne pathogens
+Clinical research professional (ACRP or SOCRA)
+
+[[Question:TE:Essay]]
+[[ID:sample_other]]
+Other clinical or laboratory experience we should know about (optional)
+
+[[PageBreak]]
+
+[[Block:CV and submission]]
+
+[[Question:DB]]
+[[ID:cv_note]]
+Please upload your CV or resume below (PDF preferred, 10 MB maximum).
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:source]]
+How did you hear about the lab?
+[[Choices]]
+Lab website
+A current or former lab member
+A publication or presentation
+Faculty member or mentor
+Social media
+Other
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:consent]]
+Confirmation
+[[Choices]]
+I confirm the information above is accurate, and I understand this form is an expression of interest, not an application for a posted University of Michigan position.
