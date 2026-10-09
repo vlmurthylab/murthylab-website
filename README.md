@@ -18,6 +18,8 @@ step and no framework.
       Lab_Website.bib    Better BibTeX export from Zotero — source of truth
       build_pubs.py      regenerates docs/publications.html from the .bib
       README.md          how to run it
+      interest-form/     Qualtrics import file and setup notes for the
+                         expression-of-interest form linked from join.html
 
 ## Editing content
 
@@ -92,7 +94,7 @@ Settings → Pages.
 Each theme's color appears on its card, its section statistics, and its dot in
 the publications list. The logo carries all three.
 
-## Not yet built
+## Expression-of-interest form
 
-- Application form for the Join Us page (intended: a U-M Qualtrics or Google
-  form, linked rather than embedded, so the site stays static)
+Lives in U-M Qualtrics and is linked, not embedded, so the site stays static.
+The question set and setup steps are in `tools/interest-form/`.
