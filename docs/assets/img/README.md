@@ -23,3 +23,15 @@ All are vector and scale to any size. For a raster version:
 The header mark is inlined in the HTML rather than linked, so it inherits text
 color and switches automatically. Its colors come from the --mark-amber,
 --mark-cyan, and --mark-violet variables in main.css.
+
+## GitHub / social avatars
+
+PNG renders in `github/`, each at 500px (GitHub's recommended avatar size) and
+1024px:
+
+    avatar-*.png        logo-circle artwork on a full-bleed #12161C square —
+                        use this for the GitHub organization avatar; it
+                        survives both GitHub's rounded-square and circle crops
+    logo-circle-*.png   logo-circle.svg, transparent corners
+    logo-*.png          logo.svg on transparent, padded so no points clip
+    logo-dark-*.png     logo-dark.svg on transparent, same padding
