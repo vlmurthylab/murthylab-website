@@ -131,9 +131,28 @@ To check nothing was missed:
 
 should print nothing once the link is in.
 
+## The record of the live survey
+
+`survey.qsf` is a Qualtrics export of the survey as built and published
+(survey `SV_80JaBioS6qbO594`). It is the record; `qualtrics-import.txt` was
+only the starting point and is no longer kept in step. `questions.md` is a
+readable summary generated from the export:
+
+    python3 qsf_to_md.py survey.qsf -o questions.md
+
+What the export does not contain:
+
+- **The email workflow.** Recorded here instead: to
+  `vlmurthy@med.umich.edu`, subject
+  `[Murthy Lab Interest] ${q://QID3/ChoiceTextEntryValue} - ${q://QID10/ChoiceGroup/SelectedChoices}`
+  (name, then track).
+- **The logo image itself**, only a reference to the Qualtrics library copy.
+  The original is `qualtrics-header.png`.
+
 ## Changing the questions
 
-Edit questions in Qualtrics directly; this file is only the starting point.
-If you want this file to remain an accurate record, export the survey
-afterwards (*Tools → Import/Export → Export survey*, which produces a `.qsf`)
-and commit that here alongside it.
+Edit the live survey in Qualtrics, not by re-importing a file: importing into
+the existing survey replaces its questions and breaks the workflow's
+references to them, and importing as a new survey changes the public link.
+Afterwards, export again (*Tools → Import/Export → Export survey*), replace
+`survey.qsf`, regenerate `questions.md`, and commit both.
