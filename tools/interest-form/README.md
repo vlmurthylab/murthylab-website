@@ -55,6 +55,10 @@ Why Qualtrics rather than the alternatives:
    - *Security → Prevent multiple submissions*: off (people may legitimately
      resubmit an updated CV).
    - *Responses → Anonymize responses*: off — you need the contact details.
+   - *Responses → Back button*: on. Qualtrics hides it on pages that follow a
+     survey-flow element, so it does not appear on the first skills page or
+     the CV page. Accepted: getting it everywhere would mean replacing the
+     two branches with display logic on every skills question.
    - *Survey termination*: a custom end-of-survey message, e.g. "Thank you.
      We read every submission and will be in touch if a suitable role opens."
 8. **Email notification.** *Workflows → Create a workflow → Started when an
