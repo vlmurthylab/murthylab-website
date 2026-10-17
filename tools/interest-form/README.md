@@ -34,7 +34,7 @@ Why Qualtrics rather than the alternatives:
 2. In the **CV and submission** block, change the question type of the
    "Please upload your CV or resume" text to **File upload**, so the
    instruction becomes the upload question. Turn on *Force response*, then
-   *Add validation → Content type → Extensions* with `doc, docx, pdf`. (The
+   *Add validation → Content type → Extensions* with `doc, docx, odt, pdf`. (The
    ready-made *PDF* and *Document* types each cover only part of that list:
    *Document* is doc, docx, txt and odt, without PDF.) File upload is a paid
    Qualtrics add-on; if the question type is missing, ask U-M's Qualtrics
