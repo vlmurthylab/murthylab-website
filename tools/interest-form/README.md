@@ -78,7 +78,8 @@ Why Qualtrics rather than the alternatives:
      header's mark and name on the site background. Regenerate it from the
      inline SVG in any page's nav if the brand changes.
    - *Colours:* background `#161B22`, question text `#EFF1F4`, primary
-     (buttons, selected answers) `#D89550`. If the layout has a foreground
+     (buttons, selected answers) `#77B6C6`, the site's cyan. White button
+     labels are faint on that cyan; check they are readable. If the layout has a foreground
      contrast setting, choose the light-on-dark option.
    - *Fonts:* a sans serif (Helvetica or Arial) for headings and Georgia for
      body text, the closest stock matches to the site's Inter and Iowan Old
