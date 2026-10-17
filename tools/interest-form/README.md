@@ -31,9 +31,12 @@ Why Qualtrics rather than the alternatives:
 1. Sign in at <https://umich.qualtrics.com> and create a new project →
    Survey → *From a file*. Upload `qualtrics-import.txt` from this folder.
    That creates every block and question except the file upload.
-2. In the **CV and submission** block, directly after the "Please upload your
-   CV or resume below" text, add a question of type **File Upload**. Restrict
-   it to PDF, DOC and DOCX, and make it required. File upload is a paid
+2. In the **CV and submission** block, change the question type of the
+   "Please upload your CV or resume" text to **File upload**, so the
+   instruction becomes the upload question. Turn on *Force response*, then
+   *Add validation → Content type → PDF*. PDF only is deliberate: the
+   *Document* content type covers doc, docx, txt and odt but not PDF, and
+   Qualtrics allows one content type per question. File upload is a paid
    Qualtrics add-on; if the question type is missing, ask U-M's Qualtrics
    support.
 3. Mark as required (*Response requirements → Force response*): name, email,

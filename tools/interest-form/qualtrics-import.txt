@@ -274,7 +274,7 @@ Other clinical or laboratory experience we should know about (optional)
 
 [[Question:DB]]
 [[ID:cv_note]]
-Please upload your CV or resume below (PDF preferred, 10 MB maximum).
+Please upload your CV or resume (PDF, 10 MB maximum).
 
 [[Question:MC:SingleAnswer:Vertical]]
 [[ID:source]]
