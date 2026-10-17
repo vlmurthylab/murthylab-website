@@ -168,7 +168,7 @@ NAV = '''<nav class="nav"><div class="wrap">
 </div></nav>'''
 
 FOOTER = '''<footer><div class="wrap">
-<span>Murthy Lab &middot; Division of Cardiovascular Medicine &middot; University of Michigan</span>
+<span>Murthy Lab &middot; Division of Cardiovascular Medicine &middot; University of Michigan &middot; <a href="https://github.com/vlmurthylab">GitHub</a></span>
 </div></footer>'''
 
 PROFILES = ('<p class="pub-profiles">Also on '
