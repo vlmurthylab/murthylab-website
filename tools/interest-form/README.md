@@ -89,7 +89,10 @@ Qualtrics connector, and the HTTP connector is premium. The Qualtrics API is
 available, though (a personal API token can be generated under *Account
 settings → Qualtrics IDs*), so the plan is a small script on a personal U-M
 Mac that runs daily, downloads new CVs into a synced OneDrive folder with
-readable names, and appends each applicant to a spreadsheet there. Until it
+readable names, and appends each applicant to a spreadsheet there. It can
+also email each CV as an attachment (Qualtrics cannot), most likely by
+scripting Apple Mail with the U-M account added; to be confirmed on the Mac,
+since managed Macs may block adding the account or the automation prompt. Until it
 exists, download uploaded files in bulk from *Data & Analysis* now and then.
 
 The API token gives full access to the Qualtrics account. Keep it on the Mac
