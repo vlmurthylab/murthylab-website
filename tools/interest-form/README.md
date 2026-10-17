@@ -71,7 +71,21 @@ Why Qualtrics rather than the alternatives:
      uploaded files requiring sign-in: making them viewable by anyone with
      the link would let a forwarded email expose an applicant's CV.
    - Qualtrics cannot attach the uploaded file itself to the email.
-9. Under *Look and feel*, choose a U-M theme if available.
+9. **Look and feel** (paintbrush icon), to match murthylab.org:
+   - *Theme:* a blank/Qualtrics default theme rather than a U-M one, if U-M
+     allows it (the U-M themes carry their own colours).
+   - *Logo / header:* upload `qualtrics-header.png` from this folder, the site
+     header's mark and name on the site background. Regenerate it from the
+     inline SVG in any page's nav if the brand changes.
+   - *Colours:* background `#161B22`, question text `#EFF1F4`, primary
+     (buttons, selected answers) `#D89550`. If the layout has a foreground
+     contrast setting, choose the light-on-dark option.
+   - *Fonts:* a sans serif (Helvetica or Arial) for headings and Georgia for
+     body text, the closest stock matches to the site's Inter and Iowan Old
+     Style.
+   - Preview on a phone, and check the matrix grids and the upload button are
+     still readable on the dark background; if any control is hard to see,
+     fall back to a white content area with the dark header.
 10. Publish, then copy the anonymous link (it looks like
    `https://umich.qualtrics.com/jfe/form/SV_xxxxxxxxxxxxxxx`).
 
