@@ -1,0 +1,38 @@
+Qualtrics workflow: Survey response (newly created) -> Email task.
+Not included in survey.qsf; recreate from this if the survey is rebuilt.
+Insert the CV link with the {a} piped-text button inside the workflow; a
+copied file link is temporary.
+
+To:       vlmurthy@med.umich.edu
+Reply-to: ${q://QID4/ChoiceTextEntryValue}
+Subject:  [Murthy Lab interest] ${q://QID3/ChoiceTextEntryValue} – ${q://QID11/ChoiceGroup/SelectedChoices}
+
+Body:
+
+Name: ${q://QID3/ChoiceTextEntryValue}
+Email: ${q://QID4/ChoiceTextEntryValue}
+Phone: ${q://QID5/ChoiceTextEntryValue}
+Current position: ${q://QID6/ChoiceTextEntryValue}
+Degree: ${q://QID7/ChoiceGroup/SelectedChoices} in ${q://QID8/ChoiceTextEntryValue}
+Profile: ${q://QID9/ChoiceTextEntryValue}
+
+Track: ${q://QID10/ChoiceGroup/SelectedChoices}
+Position type: ${q://QID11/ChoiceGroup/SelectedChoices} ${q://QID12/ChoiceTextEntryValue}
+Time commitment: ${q://QID13/ChoiceGroup/SelectedChoices}
+Earliest start: ${q://QID14/ChoiceTextEntryValue}
+Onsite: ${q://QID15/ChoiceGroup/SelectedChoices}
+Heard about us: ${q://QID34/ChoiceGroup/SelectedChoices}
+
+Research experience:
+${q://QID16/ChoiceTextEntryValue}
+
+Proudest work:
+${q://QID17/ChoiceTextEntryValue}
+
+Publications:
+${q://QID18/ChoiceTextEntryValue}
+
+Why this lab:
+${q://QID19/ChoiceTextEntryValue}
+
+CV: ${q://QID36/UploadedFileLink}

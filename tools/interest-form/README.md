@@ -142,10 +142,8 @@ readable summary generated from the export:
 
 What the export does not contain:
 
-- **The email workflow.** Recorded here instead: to
-  `vlmurthy@med.umich.edu`, subject
-  `[Murthy Lab Interest] ${q://QID3/ChoiceTextEntryValue} - ${q://QID10/ChoiceGroup/SelectedChoices}`
-  (name, then track).
+- **The email workflow.** Recorded in `email-workflow.txt`: recipient,
+  reply-to, subject (name, then position type) and body.
 - **The logo image itself**, only a reference to the Qualtrics library copy.
   The original is `qualtrics-header.png`.
 
