@@ -98,3 +98,7 @@ the publications list. The logo carries all three.
 
 Lives in U-M Qualtrics and is linked, not embedded, so the site stays static.
 The question set and setup steps are in `tools/interest-form/`.
+
+`docs/interest/index.html` makes `murthylab.org/interest` a short, shareable
+link that forwards straight to the form. If the survey is ever rebuilt with a
+new link, update it there (two places) as well as in `join.html`.
