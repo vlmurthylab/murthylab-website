@@ -66,8 +66,10 @@ def main():
                 tags.append("files: " + v["Extension"])
             out.append(f"- **`{q['DataExportTag']}`** ({', '.join(tags)}): "
                        f"{clean(q['QuestionText'])}")
-            if "DisplayLogic" in q:
-                out.append(f"  - *Shown only: {logic(q['DisplayLogic']['0'])}*")
+            for key, when in (("DisplayLogic", "Shown only"),
+                              ("InPageDisplayLogic", "Shown in page only")):
+                if key in q:
+                    out.append(f"  - *{when}: {logic(q[key]['0'])}*")
             for cid in q.get("ChoiceOrder", []):
                 out.append(f"  - {clean(q['Choices'][str(cid)]['Display'])}")
             if q.get("Answers"):
@@ -91,6 +93,7 @@ def main():
             f"background {skin.get('background', {}).get('color')}, "
             f"primary {skin.get('colors', {}).get('primary')}",
             f"- Uploaded files require sign-in: {options.get('SecureResponseFiles')}",
+            f"- Bot detection (reCAPTCHA v3): {options.get('RecaptchaV3')}",
             ""]
     with open(args.out, "w", encoding="utf-8") as f:
         f.write("\n".join(out))

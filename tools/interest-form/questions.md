@@ -41,7 +41,7 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
   - Undergraduate research
   - Other
 - **`stage_other`** (TE): If other, please describe
-  - *Shown only: If What kind of position are you looking for? Other Is Selected*
+  - *Shown in page only: If What kind of position are you looking for? Other Is Selected*
 - **`availability`** (MC, required): Time commitment
   - Full-time
   - Part-time
@@ -163,7 +163,7 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
   - Social media
   - Other
 - **`Q37`** (TE): Who referred you, or where did you hear about us?
-  - *Shown only: If How did you hear about the lab? A current or former lab member Is Selected Or How did you hear about the lab? Faculty member or mentor Is Selected Or How did you hear about the lab? Other Is Selected*
+  - *Shown in page only: If How did you hear about the lab? A current or former lab member Is Selected Or How did you hear about the lab? Faculty member or mentor Is Selected Or How did you hear about the lab? Other Is Selected*
 - **`consent`** (MC, required): Confirmation
   - I confirm the information above is accurate, and I understand this form is an expression of interest, not an application for a posted University of Michigan position.
 
@@ -173,3 +173,4 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
 - Survey title: Murthy Lab – Expression of interest
 - Theme: *simple, background #161b22, primary #77b6c6
 - Uploaded files require sign-in: true
+- Bot detection (reCAPTCHA v3): true
