@@ -5,10 +5,14 @@ copied file link is temporary. "Include response report" is off: the report
 repeats the intro text, so the body lists every answer instead.
 
 To:       vlmurthy@med.umich.edu
-Reply-to: ${q://QID4/ChoiceTextEntryValue}
+Reply-to: (left blank; Qualtrics did not apply piped text here, so the
+          body opens with a mailto link to the applicant instead)
 Subject:  [Murthy Lab interest] ${q://QID3/ChoiceTextEntryValue} – ${q://QID11/ChoiceGroup/SelectedChoices}
 
 Body:
+
+Reply to applicant: <link, text "Email ${q://QID3/ChoiceTextEntryValue}",
+  URL mailto:${q://QID4/ChoiceTextEntryValue}?subject=Murthy%20Lab>
 
 Name: ${q://QID3/ChoiceTextEntryValue}
 Email: ${q://QID4/ChoiceTextEntryValue}
