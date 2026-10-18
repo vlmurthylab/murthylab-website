@@ -162,7 +162,7 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
   - Faculty member or mentor
   - Social media
   - Other
-- **`Q37`** (TE): Who referred you, or where did you hear about us?
+- **`referral`** (TE): Who referred you, or where did you hear about us?
   - *Shown in page only: If How did you hear about the lab? A current or former lab member Is Selected Or How did you hear about the lab? Faculty member or mentor Is Selected Or How did you hear about the lab? Other Is Selected*
 - **`consent`** (MC, required): Confirmation
   - I confirm the information above is accurate, and I understand this form is an expression of interest, not an application for a posted University of Michigan position.
