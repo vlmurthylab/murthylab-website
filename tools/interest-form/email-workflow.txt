@@ -1,7 +1,8 @@
 Qualtrics workflow: Survey response (newly created) -> Email task.
 Not included in survey.qsf; recreate from this if the survey is rebuilt.
 Insert the CV link with the {a} piped-text button inside the workflow; a
-copied file link is temporary.
+copied file link is temporary. "Include response report" is off: the report
+repeats the intro text, so the body lists every answer instead.
 
 To:       vlmurthy@med.umich.edu
 Reply-to: ${q://QID4/ChoiceTextEntryValue}
@@ -34,5 +35,30 @@ ${q://QID18/ChoiceTextEntryValue}
 
 Why this lab:
 ${q://QID19/ChoiceTextEntryValue}
+
+DATA SKILLS
+R: ${q://QID21/ChoiceGroup/SelectedAnswers/1}
+Python: ${q://QID21/ChoiceGroup/SelectedAnswers/2}
+SQL: ${q://QID21/ChoiceGroup/SelectedAnswers/3}
+Git / GitHub: ${q://QID21/ChoiceGroup/SelectedAnswers/4}
+Unix command line: ${q://QID21/ChoiceGroup/SelectedAnswers/5}
+Deep learning frameworks: ${q://QID21/ChoiceGroup/SelectedAnswers/6}
+Other languages: ${q://QID22/ChoiceGroup/SelectedChoices}
+AI/ML libraries: ${q://QID23/ChoiceGroup/SelectedChoices}
+Infrastructure: ${q://QID24/ChoiceGroup/SelectedChoices}
+Methods: ${q://QID25/ChoiceGroup/SelectedChoices}
+Data types: ${q://QID26/ChoiceGroup/SelectedChoices}
+Other: ${q://QID27/ChoiceTextEntryValue}
+
+SAMPLE COLLECTION SKILLS
+Recruitment and consent: ${q://QID29/ChoiceGroup/SelectedAnswers/1}
+Study visits: ${q://QID29/ChoiceGroup/SelectedAnswers/2}
+Phlebotomy / collection: ${q://QID29/ChoiceGroup/SelectedAnswers/3}
+Biospecimen processing: ${q://QID29/ChoiceGroup/SelectedAnswers/4}
+REDCap: ${q://QID29/ChoiceGroup/SelectedAnswers/5}
+IRB and regulatory: ${q://QID29/ChoiceGroup/SelectedAnswers/6}
+Experience: ${q://QID30/ChoiceGroup/SelectedChoices}
+Certifications: ${q://QID31/ChoiceGroup/SelectedChoices}
+Other: ${q://QID32/ChoiceTextEntryValue}
 
 CV: ${q://QID36/UploadedFileLink}

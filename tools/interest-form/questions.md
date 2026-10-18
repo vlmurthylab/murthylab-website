@@ -4,7 +4,7 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
 
 ## Introduction
 
-- **`intro`** (DB): Murthy Lab · Expression of interest Use this form if you would like to be considered for future roles in the Murthy Lab at the University of Michigan. It is not an application for a posted position: those must be submitted through the University of Michigan careers site linked from murthylab.org/join.html. We try read every submission carefully, but we may not be able to reply to each one. We will contact you if a role opens that fits your background. The form takes about ten minutes; please have your CV or resume ready to upload as a PDF or Word file.
+- **`intro`** (DB): Murthy Lab · Expression of interest Use this form if you would like to be considered for future roles in the Murthy Lab at the University of Michigan. It is not an application for a posted position: those must be submitted through the University of Michigan careers site linked from murthylab.org/join.html. We try to read every submission carefully, but we may not be able to reply to each one. We will contact you if a role opens that fits your background. The form takes about ten minutes; please have your CV or resume ready to upload as a PDF or Word file.
 
 ## About you
 
