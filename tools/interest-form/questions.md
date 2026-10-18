@@ -4,7 +4,7 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
 
 ## Introduction
 
-- **`intro`** (DB): Murthy Lab · Expression of interest Use this form if you would like to be considered for future roles in the Murthy Lab at the University of Michigan. It is not an application for a posted position: those must be submitted through the University of Michigan careers site linked from murthylab.org/join.html. We read every submission, but we may not be able to reply to each one. We will contact you if a role opens that fits your background. The form takes about ten minutes; please have your CV or resume ready to upload as a PDF or word file.
+- **`intro`** (DB): Murthy Lab · Expression of interest Use this form if you would like to be considered for future roles in the Murthy Lab at the University of Michigan. It is not an application for a posted position: those must be submitted through the University of Michigan careers site linked from murthylab.org/join.html. We try read every submission carefully, but we may not be able to reply to each one. We will contact you if a role opens that fits your background. The form takes about ten minutes; please have your CV or resume ready to upload as a PDF or Word file.
 
 ## About you
 
@@ -154,7 +154,7 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
 
 ## CV and submission
 
-- **`cv_upload`** (FileUpload, required, files: doc, docx, pdf, odt): Please upload your CV or resume below (PDF preferred, 10 MB maximum).
+- **`cv_upload`** (FileUpload, required, files: doc, docx, pdf, odt): Please upload your CV or resume below (PDF preferred though Word documents are also accepted, 10 MB maximum).
 - **`source`** (MC): How did you hear about the lab?
   - Lab website
   - A current or former lab member
@@ -168,6 +168,6 @@ Generated from `survey.qsf` by `qsf_to_md.py`. Do not edit by hand.
 ## Options
 
 - Back button: true
-- Survey title: Qualtrics Survey | Qualtrics Experience Management
+- Survey title: Murthy Lab – Expression of interest
 - Theme: *simple, background #161b22, primary #77b6c6
 - Uploaded files require sign-in: true
