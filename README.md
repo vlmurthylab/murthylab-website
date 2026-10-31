@@ -28,7 +28,8 @@ change the text, commit.
 
 On the People page, lab members are in two groups, Research staff and
 Trainees, each listed alphabetically by surname. A new person goes in their
-alphabetical place, not at the end.
+alphabetical place, not at the end. Names carry graduate and professional
+degrees only (MS, MD, PhD), not bachelor's degrees.
 
 The top nav is duplicated in every page's `<head>`-adjacent `<nav>` block, and
 `publications.html` gets its copy from the template inside
