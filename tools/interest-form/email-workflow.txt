@@ -4,7 +4,7 @@ Insert the CV link with the {a} piped-text button inside the workflow; a
 copied file link is temporary. "Include response report" is off: the report
 repeats the intro text, so the body lists every answer instead.
 
-To:       vlmurthy@med.umich.edu
+To:       vlmurthy@med.umich.edu   (phi-ok: the lab address, not a person)
 Reply-to: ${q://QID4/ChoiceTextEntryValue}
           (kept, but Qualtrics did not apply it in testing; replies go
           through the mailto link at the top of the body instead)
