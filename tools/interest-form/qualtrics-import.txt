@@ -1,0 +1,249 @@
+[[AdvancedFormat]]
+
+[[Block:Introduction]]
+
+[[Question:DB]]
+[[ID:intro]]
+<strong>Murthy Lab &middot; Expression of interest</strong><br><br>
+Use this form if you would like to be considered for future roles in the Murthy Lab, Division of Cardiovascular Medicine, University of Michigan. It is not an application for a posted position: those must be submitted through the University of Michigan careers site linked from murthylab.org/join.html.<br><br>
+We read every submission, but we may not be able to reply to each one. We will contact you if a role opens that fits your background. The form takes about ten minutes; please have your CV or resume ready to upload as a PDF.
+
+[[PageBreak]]
+
+[[Block:About you]]
+
+[[Question:TE:SingleLine]]
+[[ID:name]]
+Full name
+
+[[Question:TE:SingleLine]]
+[[ID:email]]
+Email address
+
+[[Question:TE:SingleLine]]
+[[ID:phone]]
+Phone (optional)
+
+[[Question:TE:SingleLine]]
+[[ID:position]]
+Current position and institution or employer
+
+[[Question:MC:Dropdown]]
+[[ID:degree]]
+Highest degree completed or in progress
+[[Choices]]
+High school or equivalent
+Bachelor's (in progress)
+Bachelor's
+Master's (in progress)
+Master's
+PhD (in progress)
+PhD
+MD or DO (in progress)
+MD or DO
+MD/PhD
+Other doctoral degree
+
+[[Question:TE:SingleLine]]
+[[ID:field]]
+Field of study for that degree
+
+[[Question:TE:SingleLine]]
+[[ID:profile]]
+LinkedIn, GitHub, Google Scholar, or personal website (optional)
+
+[[PageBreak]]
+
+[[Block:Interest]]
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:roles]]
+Which kinds of roles interest you? Select all that apply.
+[[Choices]]
+Postdoctoral fellowship
+Data science / machine learning
+Data management or data engineering
+Biostatistics / epidemiology
+Clinical research coordination
+Laboratory / biospecimen research
+Medical student or resident research
+Graduate student research
+Undergraduate research
+Other
+
+[[Question:TE:SingleLine]]
+[[ID:roles_other]]
+If other, please describe
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:availability]]
+What kind of position are you looking for?
+[[Choices]]
+Full-time
+Part-time
+Summer or other fixed term
+Flexible
+
+[[Question:TE:SingleLine]]
+[[ID:start]]
+Earliest date you could start (month and year)
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:onsite]]
+Our positions are onsite in Ann Arbor, Michigan. Are you able to work onsite?
+[[Choices]]
+Yes
+Yes, after relocating
+No
+Not sure
+
+[[PageBreak]]
+
+[[Block:Research experience]]
+
+[[Question:TE:Essay]]
+[[ID:research_exp]]
+Describe your prior research experience. For each project: the question, your specific role, the methods you used, and how long you worked on it.
+
+[[Question:TE:Essay]]
+[[ID:research_best]]
+Which piece of work are you proudest of, and what did you personally contribute to it?
+
+[[Question:TE:Essay]]
+[[ID:pubs]]
+Publications, preprints, abstracts, or presentations (optional). Citations or links are fine.
+
+[[Question:TE:Essay]]
+[[ID:why]]
+What draws you to this lab's work, and what would you hope to learn or do here?
+
+[[PageBreak]]
+
+[[Block:Technical skills]]
+
+[[Question:DB]]
+[[ID:skills_intro]]
+Check anything you have used in real work (a project, thesis, job, or publication), not only in coursework. Leave boxes unchecked if unsure; we will ask about specifics in conversation.
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:lang]]
+Programming languages
+[[Choices]]
+R
+Python
+SQL
+Bash / Unix shell
+SAS
+Stata
+MATLAB
+Julia
+C / C++
+Java or Scala
+
+[[Question:Matrix]]
+[[ID:lang_level]]
+How would you rate your proficiency in the three we use most?
+[[Choices]]
+R
+Python
+SQL
+[[Answers]]
+None
+Basic (coursework, short scripts)
+Working (used regularly in a project)
+Advanced (built packages, pipelines, or production code)
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:ai_libs]]
+AI and machine learning libraries
+[[Choices]]
+PyTorch
+TensorFlow / Keras
+JAX
+scikit-learn
+Hugging Face Transformers
+XGBoost / LightGBM
+PyTorch Lightning
+tidymodels or caret (R)
+LLM APIs or frameworks (e.g. OpenAI, Anthropic, LangChain)
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:data_tools]]
+Data and computing infrastructure
+[[Choices]]
+Git / GitHub
+High-performance computing cluster (e.g. Slurm)
+Cloud computing (AWS, Google Cloud, Azure)
+Docker or other containers
+Spark, Dask, or Polars for large data
+Relational databases (PostgreSQL, MySQL, SQL Server)
+Workflow managers (Snakemake, Nextflow, Airflow)
+Data visualization (ggplot2, matplotlib, plotly)
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:methods]]
+Analytic methods
+[[Choices]]
+Regression modeling
+Survival / time-to-event analysis
+Causal inference
+Mendelian randomization or other genetic epidemiology
+Mixed-effects or longitudinal models
+Deep learning model training
+Self-supervised or foundation-model pretraining
+Signal or time-series processing
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:domain]]
+Data and domain experience
+[[Choices]]
+Proteomics (Olink, SomaScan, or mass spectrometry)
+Metabolomics
+Genomics / GWAS
+Electrocardiogram (ECG) or other physiologic waveforms
+Medical imaging (PET, CT, MRI, echocardiography)
+Electronic health record data (Epic, OMOP, PCORnet)
+Large cohorts or biobanks (UK Biobank, All of Us, MESA, Framingham, etc.)
+Claims or registry data
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:clinical]]
+Clinical research and laboratory experience
+[[Choices]]
+IRB submissions and regulatory management
+Participant recruitment and informed consent
+REDCap
+Human subjects training (e.g. CITI, PEERRS)
+Phlebotomy or biospecimen collection
+Biospecimen processing and biobanking (centrifugation, aliquoting, freezer inventory)
+Laboratory assays (ELISA, PCR, or similar)
+Standard operating procedure (SOP) writing
+
+[[Question:TE:Essay]]
+[[ID:skills_other]]
+Other tools, methods, or experience we should know about (optional)
+
+[[PageBreak]]
+
+[[Block:CV and submission]]
+
+[[Question:DB]]
+[[ID:cv_note]]
+Please upload your CV or resume below (PDF preferred, 10 MB maximum).
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:source]]
+How did you hear about the lab?
+[[Choices]]
+Lab website
+A current or former lab member
+A publication or presentation
+Faculty member or mentor
+Social media
+Other
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:consent]]
+Confirmation
+[[Choices]]
+I confirm the information above is accurate, and I understand this form is an expression of interest, not an application for a posted University of Michigan position.
