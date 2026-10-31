@@ -20,6 +20,10 @@ step and no framework.
       README.md          how to run it
       interest-form/     Qualtrics import file and setup notes for the
                          expression-of-interest form linked from join.html
+      phi_guard.pl, install_hooks.R   the lab's PHI check (lab core; see below)
+
+    hooks/, AGENTS.md, CLAUDE.md, phi-guard.conf, .gitattributes
+                   lab safeguards shared by every lab repository
 
 ## Editing content
 
@@ -110,3 +114,14 @@ if the survey is ever rebuilt with a new address, that file (three places) is
 the only one to change. `docs/interest.html` catches the
 `murthylab.org/interest.html` typo and forwards to `/interest/`, so it never
 needs changing.
+
+## Lab safeguards
+
+This repository uses the same safeguards as every lab repository (from
+vlmurthylab/project-template): a `.gitignore` that keeps data out, the PHI
+check (`tools/phi_guard.pl`, run before each commit by `hooks/pre-commit` and
+on every push by GitHub), and the rules for AI assistants in `AGENTS.md`.
+Turn the check on once in each clone: `git config core.hooksPath hooks`.
+`docs/` is exempt from the check's PHI-pattern and row-level checks because it
+is the public site (contact email, clinic phone, PubMed IDs); see
+`phi-guard.conf`.
