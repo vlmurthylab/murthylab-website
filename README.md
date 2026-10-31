@@ -26,6 +26,10 @@ step and no framework.
 Home, people, join, and contact pages are hand-edited HTML. Open the file,
 change the text, commit.
 
+On the People page, lab members are in two groups, Research staff and
+Trainees, each listed alphabetically by surname. A new person goes in their
+alphabetical place, not at the end.
+
 The top nav is duplicated in every page's `<head>`-adjacent `<nav>` block, and
 `publications.html` gets its copy from the template inside
 `tools/build_pubs.py`. Adding or renaming a nav item means editing all the
