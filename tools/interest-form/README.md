@@ -94,6 +94,15 @@ Why Qualtrics rather than the alternatives:
 10. Publish, then copy the anonymous link (it looks like
    `https://umich.qualtrics.com/jfe/form/SV_xxxxxxxxxxxxxxx`).
 
+## Favicon
+
+Qualtrics has no per-survey favicon setting. A script in *Look and feel →
+General → Header* (source view) swaps the Qualtrics icon for
+`https://murthylab.org/assets/img/favicon.svg` on every page, and puts it back
+if Qualtrics restores its own. It is saved in `survey.qsf` under the survey
+options' `Header`. A script on a single question only covers that question's
+page, which is why it lives in the header.
+
 ## Filing the emails in Outlook
 
 Once the first test email arrives, right-click it → *Rules → Create rule*:
