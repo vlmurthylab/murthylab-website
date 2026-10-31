@@ -102,4 +102,6 @@ The question set and setup steps are in `tools/interest-form/`.
 `docs/interest/index.html` makes `murthylab.org/interest` a short, shareable
 link that forwards straight to the form. The Join Us page links to it too, so
 if the survey is ever rebuilt with a new address, that file (three places) is
-the only one to change.
+the only one to change. `docs/interest.html` catches the
+`murthylab.org/interest.html` typo and forwards to `/interest/`, so it never
+needs changing.
