@@ -22,8 +22,9 @@ step and no framework.
                          expression-of-interest form linked from join.html
       phi_guard.pl, install_hooks.R   the lab's PHI check (lab core; see below)
 
-    hooks/, AGENTS.md, CLAUDE.md, phi-guard.conf, .gitattributes
-                   lab safeguards shared by every lab repository
+    hooks/, .github/, AGENTS.md, CLAUDE.md, phi-guard.conf, .gitattributes
+                   lab safeguards shared by every lab repository (.github/ holds
+                   CODEOWNERS and the PHI-check workflow)
 
 ## Editing content
 
@@ -121,7 +122,13 @@ This repository uses the same safeguards as every lab repository (from
 vlmurthylab/project-template): a `.gitignore` that keeps data out, the PHI
 check (`tools/phi_guard.pl`, run before each commit by `hooks/pre-commit` and
 on every push by GitHub), and the rules for AI assistants in `AGENTS.md`.
-Turn the check on once in each clone: `git config core.hooksPath hooks`.
-`docs/` is exempt from the check's PHI-pattern and row-level checks because it
-is the public site (contact email, clinic phone, PubMed IDs); see
-`phi-guard.conf`.
+Turn the check on once in each clone: `git config core.hooksPath hooks` (or, in
+R, `source("tools/install_hooks.R")`).
+
+Seven `docs/` pages, the publications `.bib` and the interest form's survey
+definition are listed by exact path in `phi-guard.conf`, because the lab's
+contact details, DOIs and dates look like PHI to the check; every other page,
+including a new one, is fully checked. On a new page, mark a contact address or
+phone number line with an HTML comment `<!-- phi-ok -->`. The lab `.gitignore`
+also ignores data file types (`.csv`, `.xlsx`, `.zip` and others) everywhere,
+including `docs/`, so a downloadable file of those types needs an exception.
