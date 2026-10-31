@@ -1,0 +1,14 @@
+Qualtrics workflow: Survey response (newly created) -> Email task.
+Not included in survey.qsf; recreate from this if the survey is rebuilt.
+Insert the CV link with the {a} piped-text button inside the workflow; a
+copied file link is temporary. "Include response report" is off: the report
+repeats the intro text, so the body lists every answer instead.
+
+To:       vlmurthy@med.umich.edu
+Reply-to: ${q://QID4/ChoiceTextEntryValue}
+          (kept, but Qualtrics did not apply it in testing; replies go
+          through the mailto link at the top of the body instead)
+Subject:  [Murthy Lab interest] ${q://QID3/ChoiceTextEntryValue} – ${q://QID11/ChoiceGroup/SelectedChoices}
+
+Body:    email-body.html, the HTML source view of the body as saved. Paste it
+          into the editor's source view to restore it exactly.
