@@ -8,3 +8,7 @@ tools/*.pl text eol=lf
 # =============================================================================
 # This repository: additions (keep the reason next to each rule)
 # =============================================================================
+# GitHub's language bar: the publications BibTeX file (tools/Lab_Website.bib)
+# is larger than the site's HTML, so the repository showed as "TeX". Leave it
+# out of the language statistics; nothing else changes.
+*.bib linguist-detectable=false
