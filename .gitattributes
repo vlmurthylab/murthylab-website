@@ -5,6 +5,13 @@ hooks/* text eol=lf
 tools/*.pl text eol=lf
 *.sh text eol=lf
 
+# GitHub's language bar: the lab's check scripts aren't this project's code, so
+# they don't count toward its language (in a small repository the Perl check
+# would otherwise make it show as Perl).
+hooks/* linguist-vendored
+tools/phi_guard.pl linguist-vendored
+tools/install_hooks.R linguist-vendored
+
 # =============================================================================
 # This repository: additions (keep the reason next to each rule)
 # =============================================================================
@@ -12,3 +19,6 @@ tools/*.pl text eol=lf
 # is larger than the site's HTML, so the repository showed as "TeX". Leave it
 # out of the language statistics; nothing else changes.
 *.bib linguist-detectable=false
+# GitHub treats docs/ as documentation and leaves it out of the language bar;
+# here docs/ is the site itself, so count it.
+docs/** linguist-documentation=false
