@@ -20,7 +20,9 @@ step and no framework.
       README.md          how to run it
       interest-form/     Qualtrics import file and setup notes for the
                          expression-of-interest form linked from join.html
-      phi_guard.pl, install_hooks.R   the lab's PHI check (lab core; see below)
+      phi_guard.pl, test_phi_guard.pl, install_hooks.R
+                         the lab's PHI check and its self-test (lab core;
+                         see below)
 
     hooks/, .github/, AGENTS.md, CLAUDE.md, phi-guard.conf, .gitattributes
                    lab safeguards shared by every lab repository (.github/ holds
