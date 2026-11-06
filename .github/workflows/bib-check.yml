@@ -4,12 +4,15 @@
 # repository. The commit hook (hooks/pre-commit.local) refuses them, but it
 # only runs where the hook is turned on; this runs on GitHub for every push
 # and pull request that changes the .bib, including web edits and merges.
+# It reports (a red check); it blocks nothing unless main's branch
+# protection makes it a required check.
 # The .bib is on the PHI check's exact-path list, so that check doesn't
 # look inside it.
 name: Publications .bib check
 
 on:
   push:
+    branches: ['**']          # not tags: path filters don't apply to them
     paths: ['tools/Lab_Website.bib']
   pull_request:
     paths: ['tools/Lab_Website.bib']
@@ -26,6 +29,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: No Zotero file fields in the .bib
         run: |
+          if [ ! -f tools/Lab_Website.bib ]; then
+            echo "tools/Lab_Website.bib is not in this commit; nothing to check."
+            exit 0
+          fi
           n=$(grep -ci '^[[:space:]]*file[[:space:]]*=' tools/Lab_Website.bib || true)
           if [ "$n" -gt 0 ]; then
             echo "::error file=tools/Lab_Website.bib::$n Zotero \"file\" field(s): paths on the exporting computer, in a public repository. In Zotero, set Better BibTeX to omit file (Settings, Better BibTeX, Export, Fields, and the automatic export's own settings if it has them), export again, copy it over tools/Lab_Website.bib and commit that. See tools/README.md."
