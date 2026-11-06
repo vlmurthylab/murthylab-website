@@ -131,6 +131,7 @@ Seven `docs/` pages, the publications `.bib` and the interest form's survey
 definition are listed by exact path in `phi-guard.conf`, because the lab's
 contact details, DOIs and dates look like PHI to the check; every other page,
 including a new one, is fully checked. On a new page, mark a contact address or
-phone number line with an HTML comment `<!-- phi-ok -->`. The lab `.gitignore`
+phone number line with an HTML comment `<!-- phi-ok -->` (AI assistants ask
+Venk first). The lab `.gitignore`
 also ignores data file types (`.csv`, `.xlsx`, `.zip` and others) everywhere,
 including `docs/`, so a downloadable file of those types needs an exception.
