@@ -295,9 +295,10 @@ def main():
         sys.exit('No entries parsed from {} — is it a BibTeX file?'.format(args.bib))
     # Zotero's "file" field is a path on the exporting computer (with its
     # user name). This repository is public, so it must not be committed.
-    files = len(re.findall(r'^\s*file\s*=', open(args.bib, encoding='utf-8').read(), re.M))
+    with open(args.bib, encoding='utf-8') as fh:
+        files = len(re.findall(r'^\s*file\s*=', fh.read(), re.M | re.I))
     if files:
-        print('Warning: {} entries in {} have a Zotero "file" field (a path on your '
+        print('Warning: {} lines in {} hold a Zotero "file" field (a path on your '
               'computer). Remove them before committing; see tools/README.md.'.format(files, args.bib),
               file=sys.stderr)
 
