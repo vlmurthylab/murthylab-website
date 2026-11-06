@@ -299,7 +299,7 @@ def main():
         files = len(re.findall(r'^\s*file\s*=', fh.read(), re.M | re.I))
     if files:
         print('Warning: {} lines in {} hold a Zotero "file" field (a path on your '
-              'computer). Remove them before committing; see tools/README.md.'.format(files, args.bib),
+              'computer). Set Better BibTeX to omit "file" and export again; see tools/README.md.'.format(files, args.bib),
               file=sys.stderr)
 
     page = build(pubs)
