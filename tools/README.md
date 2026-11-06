@@ -2,7 +2,7 @@
 
 When you add papers in Zotero, Better BibTeX refreshes `Lab_Website.bib`. Copy it over the one in this directory, then regenerate.
 
-Leave out Zotero's `file` field, which is the path of each PDF on your computer (with your user name); this repository is public. In Zotero, open Settings, Better BibTeX, Export, Fields, and add `file` to "Fields to omit from export". `build_pubs.py` warns if the field is there, the repository's commit hook (`hooks/pre-commit.local`) refuses to commit `Lab_Website.bib` while it holds `file` fields, and GitHub's check (`.github/workflows/bib-check.yml`) fails, visibly, on every push and pull request that changes it (it reports; it doesn't stop a push). If the automatic export has its own copy of that setting (Settings, Better BibTeX, Automatic export), set it there too.
+Leave out Zotero's `file` field, which is the path of each PDF on your computer (with your user name); this repository is public. In Zotero, open Settings, Better BibTeX, Export, Fields, and add `file` to "Fields to omit from export". `build_pubs.py` warns if the field is there, the repository's commit hook (`hooks/pre-commit.local`) refuses to commit `Lab_Website.bib` while it holds `file` fields, and GitHub's check (`.github/workflows/bib-check.yml`) runs on every push and pull request; when `main`'s rules make it a required check, a pull request can't be merged while it fails. If the automatic export has its own copy of that setting (Settings, Better BibTeX, Automatic export), set it there too.
 
 Regenerate the page from it:
 
