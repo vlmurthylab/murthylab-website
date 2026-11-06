@@ -1,6 +1,8 @@
 # Updating the publications page
 
 When you add papers in Zotero, Better BibTeX refreshes `Lab_Website.bib`. Copy it over the one in this directory, then regenerate.
+
+Leave out Zotero's `file` field, which is the path of each PDF on your computer (with your user name); this repository is public. In Zotero, open Settings, Better BibTeX, Export, Fields, and add `file` to "Fields to omit from export". `build_pubs.py` warns if the field is there.
 Regenerate the page from it:
 
     python3 build_pubs.py Lab_Website.bib -o ../docs/publications.html

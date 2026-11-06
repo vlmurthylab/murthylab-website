@@ -293,6 +293,13 @@ def main():
     pubs = parse_bib(args.bib)
     if not pubs:
         sys.exit('No entries parsed from {} — is it a BibTeX file?'.format(args.bib))
+    # Zotero's "file" field is a path on the exporting computer (with its
+    # user name). This repository is public, so it must not be committed.
+    files = len(re.findall(r'^\s*file\s*=', open(args.bib, encoding='utf-8').read(), re.M))
+    if files:
+        print('Warning: {} entries in {} have a Zotero "file" field (a path on your '
+              'computer). Remove them before committing; see tools/README.md.'.format(files, args.bib),
+              file=sys.stderr)
 
     page = build(pubs)
 
