@@ -27,6 +27,9 @@ step and no framework.
     hooks/, .github/, AGENTS.md, CLAUDE.md, phi-guard.conf, .gitattributes
                    lab safeguards shared by every lab repository (.github/ holds
                    CODEOWNERS and the PHI-check workflow)
+hooks/pre-commit.local, .github/workflows/bib-check.yml
+                   this repository's own check that tools/Lab_Website.bib has
+                   no Zotero file paths (see tools/README.md)
 
 ## Editing content
 
