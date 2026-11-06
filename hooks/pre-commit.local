@@ -1,0 +1,23 @@
+#!/bin/sh
+# This repository's own check, run by hooks/pre-commit after the lab's PHI
+# check. It only adds checks; it never skips or weakens one.
+#
+# tools/Lab_Website.bib is exported automatically from Zotero (Better
+# BibTeX). Its "file" fields are the paths of PDFs on the exporting computer,
+# with the user's name, and this repository is public. The .bib is on the PHI
+# check's exact-path list (for its PubMed IDs), so the lab check doesn't look
+# inside it; this refuses a commit of the .bib while it has file fields.
+bib=tools/Lab_Website.bib
+if git diff --cached --name-only --diff-filter=ACMR | grep -qx "$bib"; then
+  n=$(git show ":$bib" | grep -ci '^[[:space:]]*file[[:space:]]*=')
+  if [ "$n" -gt 0 ]; then
+    echo "pre-commit: $bib has $n Zotero \"file\" field(s): paths on your computer," >&2
+    echo "with your user name, in a public repository. Don't edit the file by hand:" >&2
+    echo "in Zotero, open Settings, Better BibTeX, Export, Fields, and add file to" >&2
+    echo "\"Fields to omit from export\" (and in the automatic export's own settings," >&2
+    echo "if it has them). Let the export run again, copy it over $bib," >&2
+    echo "and commit that. See tools/README.md." >&2
+    exit 1
+  fi
+fi
+exit 0
