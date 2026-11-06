@@ -3,25 +3,26 @@
 # paths on the exporting computer, with the user's name, in a public
 # repository. The commit hook (hooks/pre-commit.local) refuses them, but it
 # only runs where the hook is turned on; this runs on GitHub for every push
-# and pull request that changes the .bib, including web edits and merges.
-# It reports (a red check); it blocks nothing unless main's branch
-# protection makes it a required check.
+# and pull request, including web edits and merges. It can't stop a push: by
+# then the paths are on GitHub, in its history, so tell Venk. It runs on every
+# push and pull request (no path filter), so main's rules can make it a
+# required check: a pull request can't then be merged while it fails (except
+# by an admin bypassing the rules). It takes a few seconds.
 # The .bib is on the PHI check's exact-path list, so that check doesn't
 # look inside it.
 name: Publications .bib check
 
 on:
   push:
-    branches: ['**']          # not tags: path filters don't apply to them
-    paths: ['tools/Lab_Website.bib']
   pull_request:
-    paths: ['tools/Lab_Website.bib']
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  # main's ruleset requires this job by name (bib-check): renaming it would
+  # leave pull requests waiting for a check that never reports.
   bib-check:
     runs-on: ubuntu-latest
     timeout-minutes: 5
